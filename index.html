@@ -240,12 +240,103 @@
       margin: 0;
     }
     
+    /* Whitepapers Section Styles */
+    .whitepapers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .whitepaper-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .whitepaper-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    }
+    
+    .whitepaper-image {
+      height: 200px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .whitepaper-image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.05' d='M0,224L48,213.3C96,203,192,181,288,160C384,139,480,117,576,122.7C672,128,768,160,864,170.7C960,181,1056,171,1152,165.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .whitepaper-image i {
+      font-size: 3rem;
+      z-index: 2;
+    }
+    
+    .whitepaper-content {
+      padding: 2rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .whitepaper-content h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    
+    .whitepaper-content p {
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    
+    .whitepaper-link {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--white);
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      text-align: center;
+    }
+    
+    .whitepaper-link:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }
+    
     @media (max-width: 768px) {
       header h1 { font-size: 2.2rem; }
       header p { font-size: 1.1rem; }
       nav a { margin: 0 0.8rem; font-size: 1rem; }
       section { padding: 3rem 1.5rem; }
       h2 { font-size: 2rem; }
+      .whitepapers {
+        grid-template-columns: 1fr;
+      }
     }
     
     @media (max-width: 480px) {
@@ -253,6 +344,7 @@
       .logo { width: 80px; height: 80px; padding: 15px; }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <header>
@@ -272,6 +364,7 @@
   <nav>
     <a href="index.html">Home</a>
     <a href="#services">Services</a>
+    <a href="#whitepapers">Whitepapers</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -302,6 +395,46 @@
     </div>
   </section>
 
+  <!-- New Whitepapers Section -->
+  <section id="whitepapers">
+    <h2>Whitepapers</h2>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Explore our in-depth research and insights on technology strategy, cybersecurity, and business growth.</p>
+    <div class="whitepapers">
+      <div class="whitepaper-card">
+        <div class="whitepaper-image">
+          <i class="fas fa-file-alt"></i>
+        </div>
+        <div class="whitepaper-content">
+          <h3>7 Costly IT Mistakes That Stunt Business Growth</h3>
+          <p>How Small and Mid-Sized Businesses Can Avoid Technology Pitfalls That Limit Scalability and Profitability.</p>
+          <a href="northbridge_7_costly_it_mistakes.html" class="whitepaper-link">Read Whitepaper</a>
+        </div>
+      </div>
+      
+      <div class="whitepaper-card">
+        <div class="whitepaper-image">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <div class="whitepaper-content">
+          <h3>Cybersecurity Framework for SMBs</h3>
+          <p>Implementing NIST Cybersecurity Framework core functions to protect your business from evolving threats.</p>
+          <a href="#" class="whitepaper-link">Coming Soon</a>
+        </div>
+      </div>
+      
+      <div class="whitepaper-card">
+        <div class="whitepaper-image">
+          <i class="fas fa-cloud"></i>
+        </div>
+        <div class="whitepaper-content">
+          <h3>Cloud Migration Strategy Guide</h3>
+          <p>A comprehensive approach to planning and executing successful cloud migrations with minimal disruption.</p>
+          <a href="#" class="whitepaper-link">Coming Soon</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="about">
     <h2>About Us</h2>
     <p>With over 20 years of IT leadership experience, NorthBridge Technology helps organizations of all sizes bridge the gap between technology and business outcomes. Our team has led IT strategy, cloud transformations, and cybersecurity initiatives for organizations across industries. We focus on practical, secure, and cost-effective solutions tailored to your goals.</p>
@@ -311,14 +444,14 @@
     <h2>Contact Us</h2>
     <p>Ready to discuss your IT needs? Get in touch today.</p>
     <div class="cta">
-      <a href="mailto:zach@northbridgetechnology.com">Email Us</a>
+      <a href="mailto:info@northbridgetechnology.com">Email Us</a>
     </div>
     <p style="text-align:center;">Or call us at (539) 337-9567</p>
   </section>
 
   <footer>
     <p>&copy; 2025 NorthBridge Technology. All rights reserved.</p>
-    <p><a href="privacy_policy.html">Privacy Policy</a></p>
+    <p><a href="privacy_policy.html" style="color: #fff;">Privacy Policy</a></p>
   </footer>
 </body>
 </html>
