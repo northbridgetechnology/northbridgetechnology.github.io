@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NorthBridge Technology - Terms and Conditions</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap">
+  <style>
+    :root {
+      --primary: #1f2a44;
+      --primary-light: #2f3b5c;
+      --secondary: #162036;
+      --accent: #4a7b9d;
+      --text: #333;
+      --text-light: #666;
+      --background: #f8f9fb;
+      --white: #ffffff;
+      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body { 
+      font-family: 'Open Sans', sans-serif; 
+      margin: 0; 
+      color: var(--text); 
+      background: var(--background); 
+      line-height: 1.6;
+      padding: 0;
+    }
+    
+    .container { 
+      max-width: 1000px; 
+      margin: 0 auto; 
+      padding: 2rem; 
+      background: var(--white);
+      box-shadow: var(--shadow);
+      border-radius: 8px;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    header { 
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); 
+      color: var(--white); 
+      padding: 2rem; 
+      text-align: center; 
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.05' d='M0,224L48,213.3C96,203,192,181,288,160C384,139,480,117,576,122.7C672,128,768,160,864,170.7C960,181,1056,171,1152,165.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .logo-container {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .logo {
+      display: block;
+      margin: 0 auto 1rem;
+      width: 80px;
+      height: 80px;
+      background: var(--white);
+      border-radius: 50%;
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+    
+    .logo svg {
+      width: 100%;
+      height: 100%;
+    }
+    
+    header h1 { 
+      margin: 0; 
+      font-size: 2.2rem; 
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    
+    header p { 
+      font-size: 1.1rem; 
+      margin-top: 0.5rem; 
+      font-weight: 300;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    nav { 
+      background: var(--secondary); 
+      padding: 1rem; 
+      text-align: center; 
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    nav a { 
+      color: var(--white); 
+      margin: 0 1rem; 
+      text-decoration: none; 
+      font-weight: 500;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      transition: var(--transition);
+      position: relative;
+      padding: 0.5rem 0;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: var(--transition);
+    }
+    
+    nav a:hover::after { 
+      width: 100%;
+    }
+    
+    .header { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      margin-bottom: 2rem; 
+      border-bottom: 3px solid var(--accent); 
+      padding-bottom: 1rem; 
+    }
+    
+    .logo-section { 
+      display: flex; 
+      align-items: center; 
+      gap: 1rem; 
+    }
+    
+    .logo-placeholder { 
+      width: 60px; 
+      height: 60px; 
+      border-radius: 50%; 
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); 
+      color: var(--white); 
+      display: grid; 
+      place-items: center; 
+      font-weight: 700; 
+      font-size: 18px; 
+      box-shadow: var(--shadow);
+    }
+    
+    .company-info h1 { 
+      margin: 0 0 .25rem 0; 
+      font-size: 22px; 
+      font-weight: 700; 
+      font-family: 'Montserrat', sans-serif;
+      color: var(--primary);
+    }
+    
+    .company-info p { 
+      margin: 0; 
+      color: var(--text-light); 
+      font-size: 14px; 
+    }
+    
+    .document-title { 
+      text-align: right; 
+    }
+    
+    .document-title h2 { 
+      margin: 0 0 .25rem 0; 
+      font-size: 24px; 
+      font-weight: 600; 
+      font-family: 'Montserrat', sans-serif;
+      color: var(--primary);
+    }
+    
+    .document-title p {
+      margin: 0;
+      color: var(--text-light);
+      font-size: 14px;
+    }
+    
+    .section { 
+      margin-bottom: 2rem; 
+      padding: 1.5rem;
+      background: var(--background);
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    
+    .section h3 { 
+      font-size: 18px; 
+      font-weight: 600; 
+      color: var(--accent); 
+      margin-bottom: 1rem; 
+      font-family: 'Montserrat', sans-serif;
+      position: relative;
+      padding-left: 1rem;
+    }
+    
+    .section h3::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 24px;
+      background: var(--accent);
+      border-radius: 3px;
+    }
+    
+    .section p, .section ul { 
+      font-size: 15px; 
+      margin: 0 0 1rem; 
+      color: var(--text);
+    }
+    
+    .section ul { 
+      padding-left: 1.5rem; 
+    }
+    
+    .section li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .section strong {
+      color: var(--primary);
+    }
+    
+    .footer { 
+      margin-top: 3rem; 
+      padding-top: 1.5rem; 
+      border-top: 2px solid var(--background); 
+      text-align: center; 
+      font-size: 14px; 
+      color: var(--text-light); 
+    }
+    
+    .contact-info { 
+      display: flex; 
+      justify-content: space-around; 
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    .contact-item { 
+      background: var(--background);
+      padding: 1rem;
+      border-radius: 8px;
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+    }
+    
+    .contact-item strong { 
+      display: block; 
+      font-size: 14px; 
+      color: var(--accent); 
+      margin-bottom: .5rem; 
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 1.5rem;
+        margin: 1rem;
+      }
+      
+      .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+      }
+      
+      .logo-section {
+        justify-content: center;
+      }
+      
+      .document-title {
+        text-align: center;
+      }
+      
+      .contact-info {
+        flex-direction: column;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      nav a { 
+        display: block; 
+        margin: 0.5rem 0; 
+      }
+      
+      .logo { 
+        width: 70px; 
+        height: 70px; 
+        padding: 14px; 
+      }
+      
+      .section {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <div class="logo">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 15 L85 50 L50 85 L15 50 Z" fill="none" stroke="#1f2a44" stroke-width="5"/>
+          <circle cx="50" cy="50" r="20" fill="#4a7b9d" opacity="0.7"/>
+          <path d="M40 40 L60 60 M60 40 L40 60" stroke="#1f2a44" stroke-width="3"/>
+        </svg>
+      </div>
+      <h1>NorthBridge Technology</h1>
+      <p>Bridging business with technology, securely and seamlessly.</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#Whitepapers">Whitepapers</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="logo-section">
+        <div class="logo-placeholder">NB</div>
+        <div class="company-info">
+          <h1>NorthBridge Technology</h1>
+          <p>Bridging business with technology, securely and seamlessly.</p>
+        </div>
+      </div>
+      <div class="document-title">
+        <h2>Terms and Conditions</h2>
+        <p>Last Updated: January 2025</p>
+      </div>
+    </div>
+
+    <!-- Intro -->
+    <div class="section">
+      <p>Welcome to NorthBridge Technology ("we," "our," "us"). These Terms and Conditions govern your use of our website and services. By accessing our website or engaging our services, you agree to be bound by these Terms and Conditions.</p>
+    </div>
+
+    <!-- Services -->
+    <div class="section">
+      <h3>Services</h3>
+      <p>NorthBridge Technology provides IT consulting, advisory services, and technology solutions. All services are described in specific statements of work or service agreements that will be provided to clients. Services are subject to availability and our acceptance of your project.</p>
+    </div>
+
+    <!-- Client Responsibilities -->
+    <div class="section">
+      <h3>Client Responsibilities</h3>
+      <ul>
+        <li>Provide accurate and complete information necessary for service delivery</li>
+        <li>Designate a primary point of contact for project coordination</li>
+        <li>Provide access to necessary systems, data, and personnel as required</li>
+        <li>Adhere to agreed-upon timelines for feedback and decisions</li>
+        <li>Ensure compliance with all applicable laws and regulations</li>
+      </ul>
+    </div>
+
+    <!-- Fees and Payment -->
+    <div class="section">
+      <h3>Fees and Payment</h3>
+      <ul>
+        <li>Fees for services will be outlined in project proposals or statements of work</li>
+        <li>Payment terms are net 15 days from invoice date unless otherwise specified</li>
+        <li>Late payments may be subject to interest charges of 1.5% per month or the maximum allowed by law</li>
+        <li>Clients are responsible for any taxes, duties, or other government impositions related to services</li>
+      </ul>
+    </div>
+
+    <!-- Intellectual Property -->
+    <div class="section">
+      <h3>Intellectual Property</h3>
+      <ul>
+        <li>Pre-existing intellectual property of each party remains their sole property</li>
+        <li>Work product created specifically for a client will be assigned to the client upon full payment</li>
+        <li>Methodologies, tools, frameworks, and know-how developed by NorthBridge remain our property</li>
+        <li>We retain the right to use anonymized, aggregated data for improving our services</li>
+      </ul>
+    </div>
+
+    <!-- Confidentiality -->
+    <div class="section">
+      <h3>Confidentiality</h3>
+      <p>Both parties agree to maintain the confidentiality of proprietary information received from the other party. Confidential information includes business plans, technical information, customer data, and other sensitive information. This obligation survives termination of our relationship.</p>
+    </div>
+
+    <!-- Limitation of Liability -->
+    <div class="section">
+      <h3>Limitation of Liability</h3>
+      <p>Our total liability for any claims related to our services is limited to the fees paid by the client for the specific services giving rise to the claim. We are not liable for indirect, special, incidental, or consequential damages, including lost profits or data.</p>
+    </div>
+
+    <!-- Term and Termination -->
+    <div class="section">
+      <h3>Term and Termination</h3>
+      <ul>
+        <li>These Terms remain in effect while you use our website or services</li>
+        <li>Project-specific engagements terminate upon completion or as specified in the statement of work</li>
+        <li>Either party may terminate for material breach with 30 days written notice to remedy</li>
+        <li>Upon termination, clients must pay for all services rendered and expenses incurred</li>
+      </ul>
+    </div>
+
+    <!-- Website Use -->
+    <div class="section">
+      <h3>Website Use</h3>
+      <ul>
+        <li>Content on our website is for informational purposes only and may change without notice</li>
+        <li>You may not misuse our website, including attempting to gain unauthorized access or introducing malware</li>
+        <li>We are not responsible for content on websites linked from our site</li>
+        <li>All website content is copyrighted material of NorthBridge Technology</li>
+      </ul>
+    </div>
+
+    <!-- Governing Law -->
+    <div class="section">
+      <h3>Governing Law</h3>
+      <p>These Terms and Conditions are governed by the laws of the State of Oklahoma. Any disputes shall be resolved in the state or federal courts located in Washington County, Oklahoma.</p>
+    </div>
+
+    <!-- Changes to Terms -->
+    <div class="section">
+      <h3>Changes to Terms</h3>
+      <p>We may update these Terms and Conditions from time to time. The updated version will be indicated by an updated "Last Updated" date. Continued use of our website or services after changes constitutes acceptance of the revised terms.</p>
+    </div>
+
+    <!-- Contact -->
+    <div class="section">
+      <h3>Contact Us</h3>
+      <p>If you have questions about these Terms and Conditions, please contact us at:</p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <strong>Email</strong>
+          info@northbridgetechnology.com
+        </div>
+        <div class="contact-item">
+          <strong>Phone</strong>
+          (539) 337-9567
+        </div>
+        <div class="contact-item">
+          <strong>Address</strong>
+          411 S Keeler <br>Bartlesville, OK 74003
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div>NorthBridge Technology</div>
+      <div>© 2025 All Rights Reserved</div>
+    </div>
+  </div>
+</body>
+</html>
