@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybersecurity Framework for SMBs | NorthBridge</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cybersecurity Framework for SMBs | NorthBridge</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
         :root {
             --primary: #1f2a44;
             --secondary: #162036;
@@ -338,419 +339,390 @@
     </style>
 </head>
 <body>
-    <!-- Cover Page -->
-    <section class="cover">
-        <div class="logo">NB</div>
-        <h1>Cybersecurity Framework for SMBs</h1>
-        <p>Implementing NIST Cybersecurity Framework Core Functions to Protect Your Business from Evolving Threats</p>
-        <p class="byline">NorthBridge Technology</p>
-    </section>
-
-    <!-- Content -->
-    <main class="content">
-        <!-- Executive Summary -->
-        <section>
-            <h2><i class="fas fa-file-alt"></i> Executive Summary</h2>
-            <p>Small and medium-sized businesses face an increasingly complex cybersecurity landscape, with 46% of all cyber breaches impacting businesses with fewer than 1,000 employees. The NIST Cybersecurity Framework provides a risk-based approach to managing cybersecurity risk that is adaptable for organizations of any size. This whitepaper outlines how SMBs can implement the Framework's five core functions to build a robust cybersecurity program that protects critical assets, detects threats early, and enables rapid response and recovery.</p>
-            
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-value">46%</div>
-                    <div class="stat-label">of cyber breaches impact businesses with under 1,000 employees</div>
-                    <div class="source">Source: <a href="https://www.verizon.com/business/resources/reports/dbir/" target="_blank">Verizon 2023 Data Breach Investigations Report</a></div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">60%</div>
-                    <div class="stat-label">of SMBs go out of business within 6 months of a cyber attack</div>
-                    <div class="source">Source: <a href="https://www.cyber.gc.ca/en/guidance/cyber-security-small-and-medium-sized-organizations" target="_blank">Canadian Centre for Cyber Security</a></div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">$25K</div>
-                    <div class="stat-label">average ransomware payment demand for SMBs in 2023</div>
-                    <div class="source">Source: <a href="https://www.sophos.com/en-us/content/state-of-ransomware" target="_blank">Sophos State of Ransomware 2023</a></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- NIST Framework Overview -->
-        <section>
-            <h2><i class="fas fa-shield-alt"></i> Understanding the NIST Cybersecurity Framework</h2>
-            <p>The National Institute of Standards and Technology (NIST) Cybersecurity Framework provides a policy framework of computer security guidance for how private sector organizations can assess and improve their ability to prevent, detect, and respond to cyber attacks. The Framework Core consists of five concurrent and continuous functions—Identify, Protect, Detect, Respond, Recover.</p>
-            
-            <div class="framework-grid">
-                <div class="framework-function">
-                    <h4><i class="fas fa-binoculars"></i> Identify</h4>
-                    <p>Develop an organizational understanding to manage cybersecurity risk to systems, people, assets, data, and capabilities.</p>
-                </div>
-                <div class="framework-function">
-                    <h4><i class="fas fa-lock"></i> Protect</h4>
-                    <p>Develop and implement appropriate safeguards to ensure delivery of critical infrastructure services.</p>
-                </div>
-                <div class="framework-function">
-                    <h4><i class="fas fa-search"></i> Detect</h4>
-                    <p>Develop and implement appropriate activities to identify the occurrence of a cybersecurity event.</p>
-                </div>
-                <div class="framework-function">
-                    <h4><i class="fas fa-bolt"></i> Respond</h4>
-                    <p>Develop and implement appropriate activities to take action regarding a detected cybersecurity event.</p>
-                </div>
-                <div class="framework-function">
-                    <h4><i class="fas fa-redo"></i> Recover</h4>
-                    <p>Develop and implement appropriate activities to maintain plans for resilience and to restore any capabilities or services that were impaired due to a cybersecurity event.</p>
-                </div>
-            </div>
-            
-            <div class="source" style="margin-top: 1rem;">Source: <a href="https://www.nist.gov/cyberframework" target="_blank">NIST Cybersecurity Framework</a></div>
-        </section>
-
-        <!-- Function 1: Identify -->
-        <section>
-            <h2><i class="fas fa-binoculars"></i> 1) Identify: Developing Organizational Understanding</h2>
-            <p>The Identify Function helps organizations develop an understanding of their cybersecurity risks to systems, assets, data, and capabilities. This understanding provides the basis for managing cybersecurity risk.</p>
-            
-            <div class="grid">
-                <div class="card">
-                    <h4><i class="fas fa-exclamation-triangle"></i> Business Impact of Neglect</h4>
-                    <ul>
-                        <li>43% of cyber attacks target small businesses specifically</li>
-                        <li>Only 28% of small businesses have formal cybersecurity policies</li>
-                        <li>Unknown assets create 60% of an organization's attack surface</li>
-                    </ul>
-                    <div class="source">Sources: <a href="https://www.verizon.com/business/resources/reports/dbir/" target="_blank">Verizon DBIR 2023</a>, <a href="https://www.sba.gov/blog/cybersecurity-small-businesses" target="_blank">U.S. Small Business Administration</a></div>
-                </div>
-                
-                <div class="card">
-                    <h4><i class="fas fa-check-circle"></i> NorthBridge Implementation Approach</h4>
-                    <div class="checklist">
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Conduct asset inventory and management assessment</div>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Establish business environment understanding</div>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Develop governance and risk management strategies</div>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Create risk assessment processes</div>
-                        </div>
-                    </div>
-                    <span class="pill timeline-pill">30-45 day implementation</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Function 2: Protect -->
-        <section>
-            <h2><i class="fas fa-lock"></i> 2) Protect: Implementing Safeguards</h2>
-            <p>The Protect Function outlines appropriate safeguards to ensure delivery of critical infrastructure services. This supports the ability to limit or contain the impact of a potential cybersecurity event.</p>
-            
-            <div class="grid">
-                <div class="card">
-                    <h4><i class="fas fa-exclamation-triangle"></i> Business Impact of Neglect</h4>
-                    <ul>
-                        <li>74% of breaches involve the human element (social engineering, errors, misuse)</li>
-                        <li>80% of hacking-related breaches involve brute force or lost/stolen credentials</li>
-                        <li>Basic security hygiene could prevent 98% of cyber attacks</li>
-                    </ul>
-                    <div class="source">Sources: <a href="https://www.verizon.com/business/resources/reports/dbir/" target="_blank">Verizon DBIR 2023</a>, <a href="https://www.microsoft.com/en-us/security/business/security-insights/reports/cyber-signals" target="_blank">Microsoft Cyber Signals Report</a></div>
-                </div>
-                
-                <div class="card">
-                    <h4><i class="fas fa-check-circle"></i> NorthBridge Implementation Approach</h4>
-                    <div class="checklist">
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Implement identity management and access control</div>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Establish awareness and training programs</div>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Deploy data security and protection processes</div>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Implement protective technology solutions</div>
-                        </div>
-                    </div>
-                    <span class="pill timeline-pill">60-90 day implementation</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Function 3: Detect -->
-        <section>
-            <h2><i class="fas fa-search"></i> 3) Detect: Identifying Cybersecurity Events</h2>
-            <p>The Detect Function defines appropriate activities to identify the occurrence of a cybersecurity event in a timely manner, enabling rapid response.</p>
-            
-            <div class="grid">
-                <div class="card">
-                    <h4><i class="fas fa-exclamation-triangle"></i> Business Impact of Neglect</h4>
-                    <ul>
-                        <li>The average time to identify a breach is 207 days</li>
-                        <li>68% of breaches take months or longer to discover</li>
-                        <li>Organizations without detection capabilities experience 3x higher breach costs</li>
-                    </ul>
-                    <div class="source">Sources: <a href="https://www.ibm.com/reports/data-breach" target="_blank">IBM Cost of a Data Breach Report 2023</a>, <a href="https://www.mandiant.com/resources/blog/global-perspective-threat-landscape" target="_blank">Mandiant M-Trends Report 2023</a></div>
-                </div>
-                
-                <div class="card">
-                    <h4><i class="fas fa-check-circle"></i> NorthBridge Implementation Approach</h4>
-                    <div class="checklist">
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Implement anomaly and event detection capabilities</div>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Establish continuous security monitoring</div>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Develop detection processes and procedures</div>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Deploy threat intelligence capabilities</div>
-                        </div>
-                    </div>
-                    <span class="pill timeline-pill">45-60 day implementation</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Function 4: Respond -->
-        <section>
-            <h2><i class="fas fa-bolt"></i> 4) Respond: Taking Action on Detected Events</h2>
-            <p>The Respond Function includes appropriate activities to take action regarding a detected cybersecurity incident, containing the impact of a potential cybersecurity incident.</p>
-            
-            <div class="grid">
-                <div class="card">
-                    <h4><i class="fas fa-exclamation-triangle"></i> Business Impact of Neglect</h4>
-                    <ul>
-                        <li>77% of organizations do not have a Cybersecurity Incident Response plan</li>
-                        <li>Companies with tested incident response plans save an average of $2.66 million per breach</li>
-                        <li>54% of companies say they're unprepared to respond to a cyber attack</li>
-                    </ul>
-                    <div class="source">Sources: <a href="https://www.ibm.com/reports/data-breach" target="_blank">IBM Cost of a Data Breach Report 2023</a>, <a href="https://www.cybereason.com/blog/enterprise-security-in-the-post-pandemic-era" target="_blank">Cybereason Enterprise Security Study</a></div>
-                </div>
-                
-                <div class="card">
-                    <h4><i class="fas fa-check-circle"></i> NorthBridge Implementation Approach</h4>
-                    <div class="checklist">
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Develop response planning processes</div>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Establish communications strategy for incidents</div>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Implement analysis and mitigation procedures</div>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Create improvements process based on lessons learned</div>
-                        </div>
-                    </div>
-                    <span class="pill timeline-pill">30-45 day implementation</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Function 5: Recover -->
-        <section>
-            <h2><i class="fas fa-redo"></i> 5) Recover: Maintaining Resilience</h2>
-            <p>The Recover Function identifies appropriate activities to maintain plans for resilience and to restore any capabilities or services that were impaired due to a cybersecurity incident.</p>
-            
-            <div class="grid">
-                <div class="card">
-                    <h4><i class="fas fa-exclamation-triangle"></i> Business Impact of Neglect</h4>
-                    <ul>
-                        <li>93% of companies without disaster recovery plan fail within one year after a major data loss</li>
-                        <li>The average cost of downtime is $5,600 per minute</li>
-                        <li>Only 23% of organizations test their backups quarterly or more frequently</li>
-                    </ul>
-                    <div class="source">Sources: <a href="https://www.archives.gov/records-mgmt/initiatives/task-force.html" target="_blank">National Archives & Records Administration</a>, <a href="https://www.veeam.com/whitepapers.html" target="_blank">Veeam Data Protection Report 2023</a></div>
-                </div>
-                
-                <div class="card">
-                    <h4><i class="fas fa-check-circle"></i> NorthBridge Implementation Approach</h4>
-                    <div class="checklist">
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Develop recovery planning processes</div>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Implement improvements based on lessons learned</div>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Establish communications strategy for recovery</div>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Implement 3-2-1 backup strategy (3 copies, 2 media types, 1 offsite)</div>
-                        </div>
-                    </div>
-                    <span class="pill timeline-pill">45-60 day implementation</span>
-                </div>
-            </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <!-- Implementation Roadmap -->
-        <section>
-            <h2><i class="fas fa-road"></i> 90-Day NIST CSF Implementation Roadmap</h2>
-            <div class="grid">
-                <div class="card">
-                    <h4><i class="fas fa-calendar-week"></i> Days 0-30: Assessment & Foundation</h4>
-                    <div class="checklist">
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Current state assessment and gap analysis</div>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Asset inventory and risk assessment</div>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Framework alignment and prioritization</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <h4><i class="fas fa-calendar-week"></i> Days 31-60: Core Implementation</h4>
-                    <div class="checklist">
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Implement Identify and Protect function controls</div>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Deploy Detect and Respond capabilities</div>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Establish governance and measurement frameworks</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <h4><i class="fas fa-calendar-week"></i> Days 61-90: Optimization & Testing</h4>
-                    <div class="checklist">
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Implement Recover function capabilities</div>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Conduct tabletop exercises and testing</div>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-icon"><i class="fas fa-check"></i></div>
-                            <div>Refine processes and develop long-term roadmap</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- References Section -->
-        <section class="references">
-            <h2><i class="fas fa-book"></i> Research References</h2>
-            <p>The following authoritative sources were referenced in this whitepaper. We encourage readers to explore these resources for additional information:</p>
-            
-            <ol>
-                <li>
-                    <strong>NIST Cybersecurity Framework</strong><br>
-                    <a href="https://www.nist.gov/cyberframework" target="_blank">https://www.nist.gov/cyberframework</a><br>
+<!-- Cover Page -->
+<section class="cover">
+<div class="logo">NB</div>
+<h1>Cybersecurity Framework for SMBs</h1>
+<p>Implementing NIST Cybersecurity Framework Core Functions to Protect Your Business from Evolving Threats</p>
+<p class="byline">NorthBridge Technology</p>
+</section>
+<!-- Content -->
+<main class="content">
+<!-- Executive Summary -->
+<section>
+<h2><i class="fas fa-file-alt"></i> Executive Summary</h2>
+<p>Small and medium-sized businesses face an increasingly complex cybersecurity landscape, with 46% of all cyber breaches impacting businesses with fewer than 1,000 employees. The NIST Cybersecurity Framework provides a risk-based approach to managing cybersecurity risk that is adaptable for organizations of any size. This whitepaper outlines how SMBs can implement the Framework's five core functions to build a robust cybersecurity program that protects critical assets, detects threats early, and enables rapid response and recovery.</p>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="stat-value">28%</div>
+<div class="stat-label">of small businesses have formal cybersecurity policy</div>
+<div class="source">Source: <a href="https://www.verizon.com/business/resources/reports/dbir/" target="_blank">Source: Verizon 2023 Data Breach Investigations Report</a></div>
+</div>
+<div class="stat-card">
+<div class="stat-value">93%</div>
+<div class="stat-label">of companies without DR plans fail within one year after major data loss</div>
+<div class="source">Source: <a href="https://www.veeam.com/whitepapers.html" target="_blank">Source: Veeam Data Protection Report 2023</a></div>
+</div>
+<div class="stat-card">
+<div class="stat-value">$2.66M</div>
+<div class="stat-label">average cost save per breach of companies with tested incident response plans</div>
+<div class="source">Source: <a href="https://www.ibm.com/reports/data-breach" target="_blank">Source: IBM Cost of a Data Breach Report 2023</a></div>
+</div>
+</div>
+</section>
+<!-- NIST Framework Overview -->
+<section>
+<h2><i class="fas fa-shield-alt"></i> Understanding the NIST Cybersecurity Framework</h2>
+<p>The National Institute of Standards and Technology (NIST) Cybersecurity Framework provides a policy framework of computer security guidance for how private sector organizations can assess and improve their ability to prevent, detect, and respond to cyber attacks. The Framework Core consists of five concurrent and continuous functions—Identify, Protect, Detect, Respond, Recover.</p>
+<div class="framework-grid">
+<div class="framework-function">
+<h4><i class="fas fa-binoculars"></i> Identify</h4>
+<p>Develop an organizational understanding to manage cybersecurity risk to systems, people, assets, data, and capabilities.</p>
+</div>
+<div class="framework-function">
+<h4><i class="fas fa-lock"></i> Protect</h4>
+<p>Develop and implement appropriate safeguards to ensure delivery of critical infrastructure services.</p>
+</div>
+<div class="framework-function">
+<h4><i class="fas fa-search"></i> Detect</h4>
+<p>Develop and implement appropriate activities to identify the occurrence of a cybersecurity event.</p>
+</div>
+<div class="framework-function">
+<h4><i class="fas fa-bolt"></i> Respond</h4>
+<p>Develop and implement appropriate activities to take action regarding a detected cybersecurity event.</p>
+</div>
+<div class="framework-function">
+<h4><i class="fas fa-redo"></i> Recover</h4>
+<p>Develop and implement appropriate activities to maintain plans for resilience and to restore any capabilities or services that were impaired due to a cybersecurity event.</p>
+</div>
+</div>
+<div class="source" style="margin-top: 1rem;">Source: <a href="https://www.nist.gov/cyberframework" target="_blank">NIST Cybersecurity Framework</a></div>
+</section>
+<!-- Function 1: Identify -->
+<section>
+<h2><i class="fas fa-binoculars"></i> 1) Identify: Developing Organizational Understanding</h2>
+<p>The Identify Function helps organizations develop an understanding of their cybersecurity risks to systems, assets, data, and capabilities. This understanding provides the basis for managing cybersecurity risk.</p>
+<div class="grid">
+<div class="card">
+<h4><i class="fas fa-exclamation-triangle"></i> Business Impact of Neglect</h4>
+<ul>
+<li>43% of cyber attacks target small businesses specifically</li>
+<li>Only 28% of small businesses have formal cybersecurity policies</li>
+<li>Unknown assets create 60% of an organization's attack surface</li>
+</ul>
+<div class="source">Sources: <a href="https://www.verizon.com/business/resources/reports/dbir/" target="_blank">Verizon DBIR 2023</a>, <a href="https://www.sba.gov/blog/cybersecurity-small-businesses" target="_blank">U.S. Small Business Administration</a></div>
+</div>
+<div class="card">
+<h4><i class="fas fa-check-circle"></i> NorthBridge Implementation Approach</h4>
+<div class="checklist">
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Conduct asset inventory and management assessment</div>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Establish business environment understanding</div>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Develop governance and risk management strategies</div>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Create risk assessment processes</div>
+</div>
+</div>
+<span class="pill timeline-pill">30-45 day implementation</span>
+</div>
+</div>
+</section>
+<!-- Function 2: Protect -->
+<section>
+<h2><i class="fas fa-lock"></i> 2) Protect: Implementing Safeguards</h2>
+<p>The Protect Function outlines appropriate safeguards to ensure delivery of critical infrastructure services. This supports the ability to limit or contain the impact of a potential cybersecurity event.</p>
+<div class="grid">
+<div class="card">
+<h4><i class="fas fa-exclamation-triangle"></i> Business Impact of Neglect</h4>
+<ul>
+<li>74% of breaches involve the human element (social engineering, errors, misuse)</li>
+<li>80% of hacking-related breaches involve brute force or lost/stolen credentials</li>
+<li>Basic security hygiene could prevent 98% of cyber attacks</li>
+</ul>
+<div class="source">Sources: <a href="https://www.verizon.com/business/resources/reports/dbir/" target="_blank">Verizon DBIR 2023</a>, <a href="https://www.microsoft.com/en-us/security/business/security-insights/reports/cyber-signals" target="_blank">Microsoft Cyber Signals Report</a></div>
+</div>
+<div class="card">
+<h4><i class="fas fa-check-circle"></i> NorthBridge Implementation Approach</h4>
+<div class="checklist">
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Implement identity management and access control</div>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Establish awareness and training programs</div>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Deploy data security and protection processes</div>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Implement protective technology solutions</div>
+</div>
+</div>
+<span class="pill timeline-pill">60-90 day implementation</span>
+</div>
+</div>
+</section>
+<!-- Function 3: Detect -->
+<section>
+<h2><i class="fas fa-search"></i> 3) Detect: Identifying Cybersecurity Events</h2>
+<p>The Detect Function defines appropriate activities to identify the occurrence of a cybersecurity event in a timely manner, enabling rapid response.</p>
+<div class="grid">
+<div class="card">
+<h4><i class="fas fa-exclamation-triangle"></i> Business Impact of Neglect</h4>
+<ul>
+<li>The average time to identify a breach is 207 days</li>
+<li>68% of breaches take months or longer to discover</li>
+<li>Organizations without detection capabilities experience 3x higher breach costs</li>
+</ul>
+<div class="source">Sources: <a href="https://www.ibm.com/reports/data-breach" target="_blank">IBM Cost of a Data Breach Report 2023</a>, <a href="https://www.mandiant.com/resources/blog/global-perspective-threat-landscape" target="_blank">Mandiant M-Trends Report 2023</a></div>
+</div>
+<div class="card">
+<h4><i class="fas fa-check-circle"></i> NorthBridge Implementation Approach</h4>
+<div class="checklist">
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Implement anomaly and event detection capabilities</div>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Establish continuous security monitoring</div>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Develop detection processes and procedures</div>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Deploy threat intelligence capabilities</div>
+</div>
+</div>
+<span class="pill timeline-pill">45-60 day implementation</span>
+</div>
+</div>
+</section>
+<!-- Function 4: Respond -->
+<section>
+<h2><i class="fas fa-bolt"></i> 4) Respond: Taking Action on Detected Events</h2>
+<p>The Respond Function includes appropriate activities to take action regarding a detected cybersecurity incident, containing the impact of a potential cybersecurity incident.</p>
+<div class="grid">
+<div class="card">
+<h4><i class="fas fa-exclamation-triangle"></i> Business Impact of Neglect</h4>
+<ul>
+<li>77% of organizations do not have a Cybersecurity Incident Response plan</li>
+<li>Companies with tested incident response plans save an average of $2.66 million per breach</li>
+<li>54% of companies say they're unprepared to respond to a cyber attack</li>
+</ul>
+<div class="source">Sources: <a href="https://www.ibm.com/reports/data-breach" target="_blank">IBM Cost of a Data Breach Report 2023</a>, <a href="https://www.cybereason.com/blog/enterprise-security-in-the-post-pandemic-era" target="_blank">Cybereason Enterprise Security Study</a></div>
+</div>
+<div class="card">
+<h4><i class="fas fa-check-circle"></i> NorthBridge Implementation Approach</h4>
+<div class="checklist">
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Develop response planning processes</div>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Establish communications strategy for incidents</div>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Implement analysis and mitigation procedures</div>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Create improvements process based on lessons learned</div>
+</div>
+</div>
+<span class="pill timeline-pill">30-45 day implementation</span>
+</div>
+</div>
+</section>
+<!-- Function 5: Recover -->
+<section>
+<h2><i class="fas fa-redo"></i> 5) Recover: Maintaining Resilience</h2>
+<p>The Recover Function identifies appropriate activities to maintain plans for resilience and to restore any capabilities or services that were impaired due to a cybersecurity incident.</p>
+<div class="grid">
+<div class="card">
+<h4><i class="fas fa-exclamation-triangle"></i> Business Impact of Neglect</h4>
+<ul>
+<li>93% of companies without disaster recovery plan fail within one year after a major data loss</li>
+<li>The average cost of downtime is $5,600 per minute</li>
+<li>Only 23% of organizations test their backups quarterly or more frequently</li>
+</ul>
+<div class="source">Sources: <a href="https://www.archives.gov/records-mgmt/initiatives/task-force.html" target="_blank">National Archives &amp; Records Administration</a>, <a href="https://www.veeam.com/whitepapers.html" target="_blank">Veeam Data Protection Report 2023</a></div>
+</div>
+<div class="card">
+<h4><i class="fas fa-check-circle"></i> NorthBridge Implementation Approach</h4>
+<div class="checklist">
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Develop recovery planning processes</div>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Implement improvements based on lessons learned</div>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Establish communications strategy for recovery</div>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Implement 3-2-1 backup strategy (3 copies, 2 media types, 1 offsite)</div>
+</div>
+</div>
+<span class="pill timeline-pill">45-60 day implementation</span>
+</div>
+</div>
+</section>
+<div class="divider"></div>
+<!-- Implementation Roadmap -->
+<section>
+<h2><i class="fas fa-road"></i> 90-Day NIST CSF Implementation Roadmap</h2>
+<div class="grid">
+<div class="card">
+<h4><i class="fas fa-calendar-week"></i> Days 0-30: Assessment &amp; Foundation</h4>
+<div class="checklist">
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Current state assessment and gap analysis</div>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Asset inventory and risk assessment</div>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Framework alignment and prioritization</div>
+</div>
+</div>
+</div>
+<div class="card">
+<h4><i class="fas fa-calendar-week"></i> Days 31-60: Core Implementation</h4>
+<div class="checklist">
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Implement Identify and Protect function controls</div>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Deploy Detect and Respond capabilities</div>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Establish governance and measurement frameworks</div>
+</div>
+</div>
+</div>
+<div class="card">
+<h4><i class="fas fa-calendar-week"></i> Days 61-90: Optimization &amp; Testing</h4>
+<div class="checklist">
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Implement Recover function capabilities</div>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Conduct tabletop exercises and testing</div>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon"><i class="fas fa-check"></i></div>
+<div>Refine processes and develop long-term roadmap</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- References Section -->
+<section class="references">
+<h2><i class="fas fa-book"></i> Research References</h2>
+<p>The following authoritative sources were referenced in this whitepaper. We encourage readers to explore these resources for additional information:</p>
+<ol>
+<li>
+<strong>NIST Cybersecurity Framework</strong><br/>
+<a href="https://www.nist.gov/cyberframework" target="_blank">https://www.nist.gov/cyberframework</a><br/>
                     The official framework providing a policy framework of computer security guidance.
                 </li>
-                <li>
-                    <strong>Verizon Data Breach Investigations Report (2023)</strong><br>
-                    <a href="https://www.verizon.com/business/resources/reports/dbir/" target="_blank">https://www.verizon.com/business/resources/reports/dbir/</a><br>
+<li>
+<strong>Verizon Data Breach Investigations Report (2023)</strong><br/>
+<a href="https://www.verizon.com/business/resources/reports/dbir/" target="_blank">https://www.verizon.com/business/resources/reports/dbir/</a><br/>
                     Comprehensive analysis of real-world security incidents and data breaches.
                 </li>
-                <li>
-                    <strong>IBM Cost of a Data Breach Report (2023)</strong><br>
-                    <a href="https://www.ibm.com/reports/data-breach" target="_blank">https://www.ibm.com/reports/data-breach</a><br>
+<li>
+<strong>IBM Cost of a Data Breach Report (2023)</strong><br/>
+<a href="https://www.ibm.com/reports/data-breach" target="_blank">https://www.ibm.com/reports/data-breach</a><br/>
                     Global study analyzing the financial impact of data breaches across industries.
                 </li>
-                <li>
-                    <strong>Canadian Centre for Cyber Security</strong><br>
-                    <a href="https://www.cyber.gc.ca/en/guidance/cyber-security-small-and-medium-sized-organizations" target="_blank">https://www.cyber.gc.ca/en/guidance/cyber-security-small-and-medium-sized-organizations</a><br>
+<li>
+<strong>Canadian Centre for Cyber Security</strong><br/>
+<a href="https://www.cyber.gc.ca/en/guidance/cyber-security-small-and-medium-sized-organizations" target="_blank">https://www.cyber.gc.ca/en/guidance/cyber-security-small-and-medium-sized-organizations</a><br/>
                     Government resource providing cybersecurity guidance for SMBs.
                 </li>
-                <li>
-                    <strong>Sophos State of Ransomware (2023)</strong><br>
-                    <a href="https://www.sophos.com/en-us/content/state-of-ransomware" target="_blank">https://www.sophos.com/en-us/content/state-of-ransomware</a><br>
+<li>
+<strong>Sophos State of Ransomware (2023)</strong><br/>
+<a href="https://www.sophos.com/en-us/content/state-of-ransomware" target="_blank">https://www.sophos.com/en-us/content/state-of-ransomware</a><br/>
                     Annual report on ransomware trends, impacts, and recovery costs.
                 </li>
-                <li>
-                    <strong>U.S. Small Business Administration</strong><br>
-                    <a href="https://www.sba.gov/blog/cybersecurity-small-businesses" target="_blank">https://www.sba.gov/blog/cybersecurity-small-businesses</a><br>
+<li>
+<strong>U.S. Small Business Administration</strong><br/>
+<a href="https://www.sba.gov/blog/cybersecurity-small-businesses" target="_blank">https://www.sba.gov/blog/cybersecurity-small-businesses</a><br/>
                     Resources and guidance for small business cybersecurity.
                 </li>
-                <li>
-                    <strong>Microsoft Cyber Signals Report</strong><br>
-                    <a href="https://www.microsoft.com/en-us/security/business/security-insights/reports/cyber-signals" target="_blank">https://www.microsoft.com/en-us/security/business/security-insights/reports/cyber-signals</a><br>
+<li>
+<strong>Microsoft Cyber Signals Report</strong><br/>
+<a href="https://www.microsoft.com/en-us/security/business/security-insights/reports/cyber-signals" target="_blank">https://www.microsoft.com/en-us/security/business/security-insights/reports/cyber-signals</a><br/>
                     Quarterly threat intelligence brief providing cybersecurity insights.
                 </li>
-                <li>
-                    <strong>Mandiant M-Trends Report (2023)</strong><br>
-                    <a href="https://www.mandiant.com/resources/blog/global-perspective-threat-landscape" target="_blank">https://www.mandiant.com/resources/blog/global-perspective-threat-landscape</a><br>
+<li>
+<strong>Mandiant M-Trends Report (2023)</strong><br/>
+<a href="https://www.mandiant.com/resources/blog/global-perspective-threat-landscape" target="_blank">https://www.mandiant.com/resources/blog/global-perspective-threat-landscape</a><br/>
                     Annual report providing statistics and insights on the evolving threat landscape.
                 </li>
-                <li>
-                    <strong>Cybereason Enterprise Security Study</strong><br>
-                    <a href="https://www.cybereason.com/blog/enterprise-security-in-the-post-pandemic-era" target="_blank">https://www.cybereason.com/blog/enterprise-security-in-the-post-pandemic-era</a><br>
+<li>
+<strong>Cybereason Enterprise Security Study</strong><br/>
+<a href="https://www.cybereason.com/blog/enterprise-security-in-the-post-pandemic-era" target="_blank">https://www.cybereason.com/blog/enterprise-security-in-the-post-pandemic-era</a><br/>
                     Research on organizational preparedness for cyber attacks.
                 </li>
-                <li>
-                    <strong>National Archives & Records Administration</strong><br>
-                    <a href="https://www.archives.gov/records-mgmt/initiatives/task-force.html" target="_blank">https://www.archives.gov/records-mgmt/initiatives/task-force.html</a><br>
+<li>
+<strong>National Archives &amp; Records Administration</strong><br/>
+<a href="https://www.archives.gov/records-mgmt/initiatives/task-force.html" target="_blank">https://www.archives.gov/records-mgmt/initiatives/task-force.html</a><br/>
                     Information on data preservation and disaster recovery statistics.
                 </li>
-                <li>
-                    <strong>Veeam Data Protection Report (2023)</strong><br>
-                    <a href="https://www.veeam.com/whitepapers.html" target="_blank">https://www.veeam.com/whitepapers.html</a><br>
+<li>
+<strong>Veeam Data Protection Report (2023)</strong><br/>
+<a href="https://www.veeam.com/whitepapers.html" target="_blank">https://www.veeam.com/whitepapers.html</a><br/>
                     Comprehensive report on data protection trends and practices.
                 </li>
-            </ol>
-        </section>
-
-        <!-- Call to Action -->
-        <section class="cta-section">
-            <h2>Ready to Implement a Cybersecurity Framework for Your Business?</h2>
-            <p>Schedule a complimentary Cybersecurity Assessment to identify vulnerabilities and develop your customized NIST CSF implementation roadmap.</p>
-            <a class="btn" href="mailto:info@northbridgetechnology.com?subject=Cybersecurity%20Assessment%20Request">
-                <i class="fas fa-calendar-check"></i> Request Assessment
+</ol>
+</section>
+<!-- Call to Action -->
+<section class="cta-section">
+<h2>Ready to Implement a Cybersecurity Framework for Your Business?</h2>
+<p>Schedule a complimentary Cybersecurity Assessment to identify vulnerabilities and develop your customized NIST CSF implementation roadmap.</p>
+<a class="btn" href="mailto:info@northbridgetechnology.com?subject=Cybersecurity%20Assessment%20Request">
+<i class="fas fa-calendar-check"></i> Request Assessment
             </a>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <p>© 2023 NorthBridge Technology. All rights reserved.</p>
-            <p>This document is classified as: For Client Distribution</p>
-        </footer>
-    </main>
-
-    <script>
+</section>
+<!-- Footer -->
+<footer>
+<p>© 2023 NorthBridge Technology. All rights reserved.</p>
+<p>This document is classified as: For Client Distribution</p>
+</footer>
+</main>
+<script>
         document.addEventListener('DOMContentLoaded', function() {
             // Simple animation for content cards
             const cards = document.querySelectorAll('.card');
