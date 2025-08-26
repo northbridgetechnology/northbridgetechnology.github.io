@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact NorthBridge Technology</title>
+    <style>
+        :root {
+            --primary: #1f2a44;
+            --primary-light: #2f3b5c;
+            --secondary: #162036;
+            --accent: #4a7b9d;
+            --text: #333;
+            --text-light: #666;
+            --background: #f8f9fb;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #crmWebToEntityForm {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            width: 100%;
+            max-width: 700px;
+            overflow: hidden;
+            padding: 25px;
+            margin: 20px;
+        }
+
+        .form-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            margin: -25px -25px 25px -25px;
+        }
+
+        .form-header h2 {
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+        }
+
+        .form-header p {
+            opacity: 0.9;
+        }
+
+        .zcwf_title {
+            font-size: 1.5rem !important;
+            color: var(--primary) !important;
+            font-weight: 700 !important;
+            margin-bottom: 1.5rem !important;
+            text-align: center !important;
+            padding: 0 !important;
+        }
+
+        .zcwf_row {
+            margin: 20px 0 !important;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .zcwf_col_lab {
+            width: 30% !important;
+            padding: 0 6px 0 0 !important;
+            margin: 0 !important;
+            float: none !important;
+        }
+
+        .zcwf_col_fld {
+            width: 70% !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            float: none !important;
+        }
+
+        .zcwf_col_lab label {
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .required::after {
+            content: "*";
+            color: #e74c3c;
+            margin-left: 4px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100% !important;
+            padding: 12px 15px !important;
+            border: 1px solid #ddd !important;
+            border-radius: 6px !important;
+            font-size: 16px !important;
+            transition: var(--transition);
+            font-family: inherit !important;
+            background: var(--white) !important;
+            color: var(--text) !important;
+            float: none !important;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent) !important;
+            box-shadow: 0 0 0 3px rgba(74, 123, 157, 0.2) !important;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .zcwf_col_fld_slt {
+            width: 100% !important;
+            padding: 12px 15px !important;
+            border: 1px solid #ddd !important;
+            border-radius: 6px !important;
+            font-size: 16px !important;
+            background: var(--white) !important;
+            color: var(--text) !important;
+            height: auto !important;
+            float: none !important;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .formsubmit {
+            background: linear-gradient(to right, var(--primary) 0%, var(--primary-light) 100%) !important;
+            color: var(--white) !important;
+            border: none !important;
+            padding: 14px 28px !important;
+            border-radius: 6px !important;
+            font-size: 16px !important;
+            font-weight: 600 !important;
+            cursor: pointer;
+            transition: var(--transition);
+            width: auto !important;
+            max-width: none !important;
+            margin-right: 0 !important;
+        }
+
+        .formsubmit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        input[type="reset"] {
+            background: #f0f0f0 !important;
+            color: var(--text) !important;
+            border: 1px solid #ddd !important;
+            padding: 14px 28px !important;
+            border-radius: 6px !important;
+            font-size: 16px !important;
+            font-weight: 600 !important;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        input[type="reset"]:hover {
+            background: #e0e0e0 !important;
+        }
+
+        /* Zoho-specific styles that must be preserved */
+        .wf_customMessageBox{
+            font-family: Arial, Helvetica, sans-serif;
+            color:  #132C14;
+            background:   #F5FAF5;
+            box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25);
+            max-width: 90%;
+            width: max-content;
+            word-break: break-word;
+            z-index: 11000;
+            border-radius: 6px;
+            border: 1px solid  #A9D3AB;
+            min-width: 100px;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+        .wf_customCircle{
+            position: relative;
+            background-color:  #12AA67;
+            border-radius: 100%;
+            width: 20px;
+            height: 20px;
+            flex: none;
+            margin-right: 7px;
+        }
+        .wf_customCheckMark{
+            box-sizing: unset !important;
+            position: absolute;
+            transform: rotate(45deg)translate(-50%, -50%);
+            left: 6px;
+            top: 9px;
+            height: 8px;
+            width: 3px;
+            border-bottom: 2px solid  #fff;
+            border-right: 2px solid  #fff;
+        }
+        .wf_customClose{
+            box-sizing: border-box;
+            position: relative;
+            width: 18px;
+            height: 18px;
+        }
+        .wf_customClose::after,
+        .wf_customClose::before{
+            content: '';
+            display: block;
+            box-sizing: border-box;
+            position: absolute;
+            width: 12px;
+            height: 1.5px;
+            background:  #616E88;
+            transform: rotate(45deg);
+            border-radius: 5px;
+            top: 8px;
+            left: 3px;
+        }
+        .wf_customClose::after{
+            transform: rotate(-45deg);
+        }
+
+        @media all and (max-width: 600px) {
+            #crmWebToEntityForm {
+                padding: 15px;
+                margin: 10px;
+            }
+
+            .zcwf_col_lab,
+            .zcwf_col_fld {
+                width: 100% !important;
+                float: none !important;
+            }
+
+            .zcwf_row {
+                flex-direction: column;
+            }
+
+            .form-buttons {
+                flex-direction: column;
+            }
+
+            .formsubmit,
+            input[type="reset"] {
+                width: 100% !important;
+            }
+        }
+    </style>
+    <script src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js'></script>
+</head>
+<body>
+    <div id = 'crmWebToEntityForm' class = 'zcwf_lblLeft crmWebToEntityForm'>
+        <div class="form-header">
+            <h2>Contact NorthBridge Technology</h2>
+            <p>Let's discuss how we can help transform your technology infrastructure</p>
+        </div>
+
+        <div class = 'wf_customMessageBox' id = 'wf_splash' style = 'display:none'>
+            <div class = 'wf_customCircle'>
+                <div class = 'wf_customCheckMark'></div>
+            </div>
+            <span id = 'wf_splash_info'></span>
+        </div>
+
+        <form id = 'webform6946802000000573437' name = 'WebToLeads6946802000000573437' accept-charset = 'UTF-8'>
+            <!-- All hidden fields from original form preserved -->
+            <input type = 'text' style = 'display:none;' name = 'xnQsjsdp' value = 'a2277ed51603fd84a4da41b2d58def88b65f123d003e47910be52ab2f7cec6e2'>
+            <input type = 'hidden' name = 'zc_gad' id = 'zc_gad' value = ''>
+            <input type = 'text' style = 'display:none;' name = 'xmIwtLD' value = 'c57d18bd278518489b6d3f4e061a2654c653160b0f9204a4fe1cb81de3300a4faab8c5eaa4cc65f5036ec2de7b16a7fd'>
+            <input type = 'text' style = 'display:none;' name = 'actionType' value = 'TGVhZHM='>
+            <input type = 'text' style = 'display:none;' name = 'returnURL' value = 'null'>
+
+            <div class = 'zcwf_title'>Contact Form</div>
+
+            <div class = 'zcwf_row'>
+                <div class = 'zcwf_col_lab'>
+                    <label for = 'Company' class="required">Company Name</label>
+                </div>
+                <div class = 'zcwf_col_fld'>
+                    <input type = 'text' id = 'Company' aria-required = 'true' aria-label = 'Company' name = 'Company' aria-valuemax = '200' maxlength = '200'>
+                    <div class = 'zcwf_col_help'></div>
+                </div>
+            </div>
+
+            <div class = 'zcwf_row'>
+                <div class = 'zcwf_col_lab'>
+                    <label for = 'First_Name' class="required">First Name</label>
+                </div>
+                <div class = 'zcwf_col_fld'>
+                    <input type = 'text' id = 'First_Name' aria-required = 'true' aria-label = 'First Name' name = 'First Name' aria-valuemax = '40' maxlength = '40'>
+                    <div class = 'zcwf_col_help'></div>
+                </div>
+            </div>
+
+            <div class = 'zcwf_row'>
+                <div class = 'zcwf_col_lab'>
+                    <label for = 'Last_Name' class="required">Last Name</label>
+                </div>
+                <div class = 'zcwf_col_fld'>
+                    <input type = 'text' id = 'Last_Name' aria-required = 'true' aria-label = 'Last Name' name = 'Last Name' aria-valuemax = '80' maxlength = '80'>
+                    <div class = 'zcwf_col_help'></div>
+                </div>
+            </div>
+
+            <div class = 'zcwf_row'>
+                <div class = 'zcwf_col_lab'>
+                    <label for = 'Email' class="required">Email</label>
+                </div>
+                <div class = 'zcwf_col_fld'>
+                    <input type = 'text' ftype = 'email' autocomplete = 'false' id = 'Email' aria-required = 'true' aria-label = 'Email' name = 'Email' aria-valuemax = '100' crmlabel = '' maxlength = '100'>
+                    <div class = 'zcwf_col_help'></div>
+                </div>
+            </div>
+
+            <div class = 'zcwf_row'>
+                <div class = 'zcwf_col_lab'>
+                    <label for = 'Phone' class="required">Phone</label>
+                </div>
+                <div class = 'zcwf_col_fld'>
+                    <input type = 'text' id = 'Phone' aria-required = 'true' aria-label = 'Phone' name = 'Phone' aria-valuemax = '30' maxlength = '30'>
+                    <div class = 'zcwf_col_help'></div>
+                </div>
+            </div>
+
+            <div class = 'zcwf_row'>
+                <div class = 'zcwf_col_lab'>
+                    <label for = 'No_of_Employees' class="required">No. of Employees</label>
+                </div>
+                <div class = 'zcwf_col_fld'>
+                    <input type = 'text' id = 'No_of_Employees' aria-required = 'true' aria-label = 'No of Employees' name = 'No of Employees' aria-valuemax = '9' maxlength = '9'>
+                    <div class = 'zcwf_col_help'></div>
+                </div>
+            </div>
+
+            <div class = 'zcwf_row'>
+                <div class = 'zcwf_col_lab'>
+                    <label for = 'Industry' class="required">Industry</label>
+                </div>
+                <div class = 'zcwf_col_fld'>
+                    <select class = 'zcwf_col_fld_slt' role = 'combobox' aria-expanded = 'false' aria-haspopup = 'listbox' id = 'Industry' onChange = 'addAriaSelected6946802000000573437()' aria-required = 'true' aria-label = 'Industry' name = 'Industry'>
+                        <option value = '-None-'>-None-</option>
+                        <option value = 'ASP&#x20;&#x28;Application&#x20;Service&#x20;Provider&#x29;'>ASP &#x28;Application Service Provider&#x29;</option>
+                        <option value = 'Data&#x2f;Telecom&#x20;OEM'>Data&#x2f;Telecom OEM</option>
+                        <option value = 'ERP&#x20;&#x28;Enterprise&#x20;Resource&#x20;Planning&#x29;'>ERP &#x28;Enterprise Resource Planning&#x29;</option>
+                        <option value = 'Government&#x2f;Military'>Government&#x2f;Military</option>
+                        <option value = 'Large&#x20;Enterprise'>Large Enterprise</option>
+                        <option value = 'ManagementISV'>ManagementISV</option>
+                        <option value = 'MSP&#x20;&#x28;Management&#x20;Service&#x20;Provider&#x29;'>MSP &#x28;Management Service Provider&#x29;</option>
+                        <option value = 'Network&#x20;Equipment&#x20;Enterprise'>Network Equipment Enterprise</option>
+                        <option value = 'Non-management&#x20;ISV'>Non-management ISV</option>
+                        <option value = 'Optical&#x20;Networking'>Optical Networking</option>
+                        <option value = 'Service&#x20;Provider'>Service Provider</option>
+                        <option value = 'Small&#x2f;Medium&#x20;Enterprise'>Small&#x2f;Medium Enterprise</option>
+                        <option value = 'Storage&#x20;Equipment'>Storage Equipment</option>
+                        <option value = 'Storage&#x20;Service&#x20;Provider'>Storage Service Provider</option>
+                        <option value = 'Systems&#x20;Integrator'>Systems Integrator</option>
+                        <option value = 'Wireless&#x20;Industry'>Wireless Industry</option>
+                    </select>
+                    <div class = 'zcwf_col_help'></div>
+                </div>
+            </div>
+
+            <div class = 'zcwf_row'>
+                <div class = 'zcwf_col_lab'>
+                    <label for = 'Description' class="required">Description</label>
+                </div>
+                <div class = 'zcwf_col_fld'>
+                    <textarea style = 'font-family: inherit;' aria-multiline = 'true' id = 'Description' aria-required = 'true' aria-label = 'Description' name = 'Description'></textarea>
+                    <div class = 'zcwf_col_help'></div>
+                </div>
+            </div>
+
+            <input type = 'text' type = 'hidden' style = 'display: none;' name = 'aG9uZXlwb3Q' value = ''/>
+
+            <div class = 'zcwf_row'>
+                <div class = 'zcwf_col_lab'></div>
+                <div class = 'zcwf_col_fld'>
+                    <div class="form-buttons">
+                        <input type = 'submit' id = 'formsubmit' role = 'button' class = 'formsubmit zcwf_button' value = 'Submit' aria-label = 'Submit' title = 'Submit'>
+                        <input type = 'reset' class = 'zcwf_button' role = 'button' name = 'reset' value = 'Reset' aria-label = 'Reset' title = 'Reset'>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function addAriaSelected6946802000000573437 (){
+            var optionElem = event.target;
+            var previousSelectedOption = optionElem.querySelector ( '[aria-selected=true]' );
+            if( previousSelectedOption ){
+                previousSelectedOption.removeAttribute ( 'aria-selected' );
+            }
+            optionElem.querySelectorAll ( 'option' )[ optionElem.selectedIndex ].ariaSelected = 'true';
+        }
+        function validateEmail6946802000000573437 (){
+            var form = document.forms[ 'WebToLeads6946802000000573437' ];
+            var emailFld = form.querySelectorAll ( '[ftype=email]' );
+            var i;
+            for( i = 0; i < emailFld.length; i++ ){
+                var emailVal = emailFld[ i ].value;
+                if((emailVal.replace( /^\s+|\s+$/g,'' )).length != 0 ){
+                    var atpos = emailVal.indexOf ( '@' );
+                    var dotpos = emailVal.lastIndexOf ( '.' );
+                    if( atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length ){
+                        alert ( 'Please enter a valid email address. ' );
+                        emailFld[ i ].focus ();
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        function checkMandatory6946802000000573437 (){
+            var mndFileds = new Array ( 'Company', 'First Name', 'Last Name', 'Email', 'Phone', 'Industry', 'No of Employees', 'Description' );
+            var fldLangVal = new Array ( 'Company', 'First\x20Name', 'Last\x20Name', 'Email', 'Phone', 'Industry', 'No.\x20of\x20Employees', 'Description' );
+            for( i = 0; i < mndFileds.length; i++ ){
+                var fieldObj = document.forms[ 'WebToLeads6946802000000573437' ][ mndFileds[ i ]];
+                if( fieldObj ){
+                    if(((fieldObj.value ).replace( /^\s+|\s+$/g,'' )).length == 0 ){
+                        if( fieldObj.type == 'file' ){
+                            alert ( 'Please select a file to upload.' );
+                            fieldObj.focus ();
+                            return false;
+                        }
+                        alert ( fldLangVal[ i ] + ' cannot be empty.' );
+                        fieldObj.focus ();
+                        return false;
+                    }
+                    else if( fieldObj.nodeName == 'SELECT' ){
+                        if( fieldObj.options[fieldObj.selectedIndex].value == '-None-' ){
+                            alert ( fldLangVal[ i ] + ' cannot be none.' );
+                            fieldObj.focus ();
+                            return false;
+                        }
+                    }
+                    else if( fieldObj.type == 'checkbox' ){
+                        if( fieldObj.checked == false ){
+                            alert ( 'Please accept  ' + fldLangVal[ i ]);
+                            fieldObj.focus ();
+                            return false;
+                        }
+                    }
+                    try {
+                        if( fieldObj.name == 'Last Name' ){
+                            name = fieldObj.value;
+                        }
+                    }
+                    catch ( e ){}
+                }
+            }
+            if( !validateEmail6946802000000573437()){
+                return false;
+            }
+            var urlparams = new URLSearchParams ( window.location.search );
+            if( urlparams.has( 'service' ) && ( urlparams.get( 'service' ) === 'smarturl' )){
+                var webform = document.getElementById ( 'webform6946802000000573437' );
+                var service = urlparams.get ( 'service' );
+                var smarturlfield = document.createElement ( 'input' );
+                smarturlfield.setAttribute ( 'type', 'hidden' );
+                smarturlfield.setAttribute ( 'value', service );
+                smarturlfield.setAttribute ( 'name', 'service' );
+                webform.appendChild ( smarturlfield );
+            }
+            document.querySelector ( '.crmWebToEntityForm .formsubmit' ).setAttribute ( 'disabled', true );
+            return true;
+        }
+        $(document).ready ( function (){
+            $( '#webform6946802000000573437' ).submit ( function ( e ){
+                var ismandatory = checkMandatory6946802000000573437 ();
+                e.preventDefault ();
+                if( ismandatory ){
+                    if( typeof _wfa_track != 'undefined' && _wfa_track.wfa_submit ){
+                        _wfa_track.wfa_submit ( e );
+                    }
+                    var formData = new FormData ( this  );
+                    $.ajax ({
+                        url:'https://crm.zoho.com/crm/WebToLeadForm',
+                         type:'POST',
+                         data:formData,
+                         cache: false, contentType: false, processData: false, success: function ( data ){
+                            var splashinfodom = document.getElementById ( 'wf_splash_info' );
+                            splashinfodom.innerText = data.actionvalue;
+                            var splashdom = document.getElementById ( 'wf_splash' );
+                            document.getElementById ( 'webform6946802000000573437' ).reset.click ();
+                            splashdom.style.display = '';
+                            setTimeout ( function (){
+                                splashdom.style.display = 'none';
+                            },
+                            5000 );
+                            document.querySelector ( '.crmWebToEntityForm .formsubmit' ).removeAttribute ( 'disabled' );
+                        },
+                        error: function ( data ){
+                            alert ( 'an error occurred' );
+                        }
+                    });
+                }
+            });
+        });
+        function tooltipShow6946802000000573437 ( el ){
+            var tooltip = el.nextElementSibling;
+            var tooltipDisplay = tooltip.style.display;
+            if( tooltipDisplay == 'none' ){
+                var allTooltip = document.getElementsByClassName ( 'zcwf_tooltip_over' );
+                for( i = 0; i < allTooltip.length; i++ ){
+                    allTooltip[ i ].style.display = 'none';
+                }
+                tooltip.style.display = 'block';
+            }
+            else {
+                tooltip.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
