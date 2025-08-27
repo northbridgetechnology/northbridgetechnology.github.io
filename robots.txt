@@ -1,0 +1,35 @@
+# robots.txt for NorthBridge Technology
+# Purpose: Optimize crawl efficiency & SEO engagement
+
+User-agent: *
+# Block irrelevant or duplicate content
+Disallow: /assets/
+Disallow: /images/
+Disallow: /css/
+Disallow: /js/
+Disallow: /drafts/
+Disallow: /private/
+
+
+# Allow key content sections
+Allow: /services/
+Allow: /whitepapers/
+Allow: /about/
+Allow: /contact/
+
+# Sitemap locations (add XML if you generate one)
+Sitemap: https://northbridgetechnology.com/sitemap.xml
+Sitemap: https://northbridgetechnology.com/sitemap.html
+
+# Crawl-delay (optional, uncomment if servers get hit hard)
+# Crawl-delay: 10
+
+# Specific bot directives
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: *
+# Default fallthrough already allows everything above
