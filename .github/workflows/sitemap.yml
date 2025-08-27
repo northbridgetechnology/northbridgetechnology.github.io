@@ -7,6 +7,7 @@ on:
   push:
     paths:
       - '**/*.html'
+      - 'generate_sitemap.py'
 
 jobs:
   build:
@@ -25,16 +26,23 @@ jobs:
           set -e
           python generate_sitemap.py
 
-      - name: List files after generation
+      - name: Debug sitemap files
         run: |
-          echo "Files in repo after sitemap generation:"
+          echo "Looking for sitemap files..."
           find . -maxdepth 2 -type f -name "sitemap*"
+          ls -la
+
+      - name: Check .gitignore
+        run: |
+          echo "Checking .gitignore:"
+          cat .gitignore || echo "No .gitignore file"
 
       - name: Commit and push sitemap
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add sitemap.html sitemap.xml
+          git status
           git commit -m "Auto-update sitemap [skip ci]" || echo "No changes to commit"
           git push origin HEAD:${{ github.ref }}
         env:
