@@ -219,7 +219,10 @@ def generate_html():
 </html>
 """
 
+REPO_ROOT = Path(__file__).parent.resolve()
+
 if __name__ == "__main__":
     files = get_html_files()
-    Path("sitemap.xml").write_text(generate_xml(files), encoding="utf-8")
-    Path("sitemap.html").write_text(generate_html(), encoding="utf-8")
+    (REPO_ROOT / "sitemap.xml").write_text(generate_xml(files), encoding="utf-8")
+    (REPO_ROOT / "sitemap.html").write_text(generate_html(), encoding="utf-8")
+    print("✅ Generated sitemap.html and sitemap.xml in", REPO_ROOT)
