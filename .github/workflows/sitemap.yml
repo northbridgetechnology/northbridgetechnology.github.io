@@ -20,7 +20,15 @@ jobs:
 
       - run: pip install -r requirements.txt || echo "No requirements"
 
-      - run: python generate_sitemap.py
+      - name: Run sitemap generator
+        run: |
+          set -e
+          python generate_sitemap.py
+
+      - name: List files after generation
+        run: |
+          echo "Files in repo after sitemap generation:"
+          find . -maxdepth 2 -type f -name "sitemap*"
 
       - name: Commit and push sitemap
         run: |
