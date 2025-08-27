@@ -39,6 +39,7 @@ CATEGORIES = {
             ("contact_form.html", "Contact Form"),
             ("privacy_policy.html", "Privacy Policy"),
             ("terms_and_conditions.html", "Terms and Conditions"),
+            ("tech_stack.html", "Tech Stack"),
         ],
     },
     "external": {
@@ -202,6 +203,7 @@ def generate_html():
     <a href="index.html">Home</a>
     <a href="index.html#services">Services</a>
     <a href="index.html#whitepapers">Whitepapers</a>
+    <a href="tech_stack.html">Tech Stack</a>
     <a href="index.html#about">About</a>
     <a href="index.html#contact">Contact</a>
   </nav>
