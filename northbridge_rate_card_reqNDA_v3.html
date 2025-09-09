@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Consulting Services | NorthBridge Technology Advisors</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1f2a44;
+            --secondary: #162036;
+            --accent: #2f3b5c;
+            --background: #f8f9fb;
+            --text: #333;
+            --light: white;
+            --success: #4CAF50;
+            --warning: #FFC107;
+            --danger: #F44336;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--light);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .logo img {
+            height: 60px;
+            margin-right: 15px;
+        }
+        
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            background: var(--secondary);
+            padding: 0;
+            margin: 2rem 0;
+            list-style: none;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .tab-btn {
+            padding: 1.2rem 1.5rem;
+            background: var(--secondary);
+            color: var(--light);
+            cursor: pointer;
+            font-weight: bold;
+            border: none;
+            flex-grow: 1;
+            text-align: center;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .tab-btn:hover {
+            background: var(--accent);
+        }
+        
+        .tab-btn.active {
+            background: var(--accent);
+            position: relative;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 2.5rem;
+            background: var(--light);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .service-category {
+            margin-bottom: 2.5rem;
+        }
+        
+        .category-title {
+            color: var(--primary);
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .service-card {
+            background: var(--background);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        .service-header {
+            padding: 1.5rem;
+            background: var(--light);
+        }
+        
+        .service-title {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .service-description {
+            color: var(--text);
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+        
+        .service-details {
+            padding: 1.5rem;
+        }
+        
+        .service-price {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .price-note {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
+        .service-features {
+            list-style-type: none;
+            margin-top: 1rem;
+        }
+        
+        .service-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .service-features i {
+            color: var(--primary);
+        }
+        
+        .cta-container {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 12px;
+            color: var(--light);
+        }
+        
+        .cta-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--light);
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        footer {
+            background: var(--primary);
+            color: var(--light);
+            text-align: center;
+            padding: 2.5rem;
+            margin-top: 3rem;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .tab-btn {
+                flex-basis: 50%;
+                padding: 1rem 0.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tab-content {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .tab-btn {
+                flex-basis: 100%;
+            }
+            
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            header p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-bridge fa-2x"></i>
+            <h1>NorthBridge Technology Advisors</h1>
+        </div>
+        <p>Comprehensive IT Consulting Services & Solutions</p>
+    </header>
+
+    <div class="container">
+        <ul class="tabs">
+            <li><button class="tab-btn active" data-tab="fractional"><i class="fas fa-users"></i> Fractional Leadership</button></li>
+            <li><button class="tab-btn" data-tab="project"><i class="fas fa-project-diagram"></i> Project-Based</button></li>
+            <li><button class="tab-btn" data-tab="recurring"><i class="fas fa-sync-alt"></i> Recurring Services</button></li>
+            <li><button class="tab-btn" data-tab="hourly"><i class="fas fa-clock"></i> Hourly & Daily</button></li>
+        </ul>
+        
+        <div class="tab-content active" id="fractional">
+            <div class="service-category">
+                <h2 class="category-title"><i class="fas fa-users-crown"></i> Fractional Leadership (Retainers)</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-title">Fractional vCIO Services</h3>
+                            <p class="service-description">Strategic IT leadership, roadmaps, vendor management, reporting</p>
+                        </div>
+                        <div class="service-details">
+                            <div class="service-price"><i class="fas fa-dollar-sign"></i> $3,500 – $6,500 / month</div>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Strategic IT planning</li>
+                                <li><i class="fas fa-check-circle"></i> Technology roadmap development</li>
+                                <li><i class="fas fa-check-circle"></i> Vendor management & negotiations</li>
+                                <li><i class="fas fa-check-circle"></i> Executive reporting & dashboards</li>
+                                <li><i class="fas fa-check-circle"></i> Budget planning & oversight</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-title">Virtual CISO (vCISO) Services</h3>
+                            <p class="service-description">Security program development, compliance oversight, incident readiness</p>
+                        </div>
+                        <div class="service-details">
+                            <div class="service-price"><i class="fas fa-dollar-sign"></i> $6,500 – $12,000 / month</div>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Security program development</li>
+                                <li><i class="fas fa-check-circle"></i> Compliance oversight</li>
+                                <li><i class="fas fa-check-circle"></i> Incident response planning</li>
+                                <li><i class="fas fa-check-circle"></i> Security policy development</li>
+                                <li><i class="fas fa-check-circle"></i> Risk assessment & management</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-title">Fractional vCDO Services</h3>
+                            <p class="service-description">Data strategy, governance, analytics implementation, and insights leadership</p>
+                        </div>
+                        <div class="service-details">
+                            <div class="service-price"><i class="fas fa-dollar-sign"></i> $4,500 – $8,500 / month</div>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Data strategy development</li>
+                                <li><i class="fas fa-check-circle"></i> Data governance framework</li>
+                                <li><i class="fas fa-check-circle"></i> Analytics implementation</li>
+                                <li><i class="fas fa-check-circle"></i> BI tool selection & deployment</li>
+                                <li><i class="fas fa-check-circle"></i> Data quality management</li>
+                                <li><i class="fas fa-check-circle"></i> AI/ML strategy development</li>
+                                <li><i class="fas fa-check-circle"></i> Data-driven culture transformation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-title">Virtual CDO (vCDO) Services</h3>
+                            <p class="service-description">Data strategy, governance, analytics implementation, and insights leadership</p>
+                        </div>
+                        <div class="service-details">
+                            <div class="service-price"><i class="fas fa-dollar-sign"></i> $6,500 – $12,000 / month</div>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Data strategy development</li>
+                                <li><i class="fas fa-check-circle"></i> Data governance framework</li>
+                                <li><i class="fas fa-check-circle"></i> Analytics implementation</li>
+                                <li><i class="fas fa-check-circle"></i> Business intelligence optimization</li>
+                                <li><i class="fas fa-check-circle"></i> Data quality management</li>
+                                <li><i class="fas fa-check-circle"></i> AI/ML strategy development</li>
+                                <li><i class="fas fa-check-circle"></i> Data-driven culture transformation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="project">
+            <div class="service-category">
+                <h2 class="category-title"><i class="fas fa-project-diagram"></i> Project-Based Engagements</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-title">Microsoft 365 & Endpoint Management</h3>
+                            <p class="service-description">Azure AD, Office 365, and Microsoft Endpoint Manager implementation</p>
+                        </div>
+                        <div class="service-details">
+                            <div class="service-price"><i class="fas fa-dollar-sign"></i> $15,000 – $45,000</div>
+                            <p class="price-note">One-time project fee</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Azure AD implementation</li>
+                                <li><i class="fas fa-check-circle"></i> Office 365 deployment</li>
+                                <li><i class="fas fa-check-circle"></i> Microsoft Endpoint Manager setup</li>
+                                <li><i class="fas fa-check-circle"></i> Device management configuration</li>
+                                <li><i class="fas fa-check-circle"></i> Security policy implementation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-title">Microsoft 365 Migration</h3>
+                            <p class="service-description">Fixed scope, size-based implementation</p>
+                        </div>
+                        <div class="service-details">
+                            <div class="service-price"><i class="fas fa-dollar-sign"></i> $8,000 – $25,000</div>
+                            <p class="price-note">One-time project fee</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Email migration</li>
+                                <li><i class="fas fa-check-circle"></i> File share migration</li>
+                                <li><i class="fas fa-check-circle"></i> User training & documentation</li>
+                                <li><i class="fas fa-check-circle"></i> Post-migration support</li>
+                                <li><i class="fas fa-check-circle"></i> Minimal downtime guarantee</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-title">Security Assessment</h3>
+                            <p class="service-description">Comprehensive evaluation based on organization size and compliance needs</p>
+                        </div>
+                        <div class="service-details">
+                            <div class="service-price"><i class="fas fa-dollar-sign"></i> $10,000 – $30,000</div>
+                            <p class="price-note">One-time project fee</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Vulnerability assessment</li>
+                                <li><i class="fas fa-check-circle"></i> Penetration testing</li>
+                                <li><i class="fas fa-check-circle"></i> Security policy review</li>
+                                <li><i class="fas fa-check-circle"></i> Compliance gap analysis</li>
+                                <li><i class="fas fa-check-circle"></i> Detailed remediation plan</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-title">Cloud Migration (Azure/AWS)</h3>
+                            <p class="service-description">Workload-dependent cloud transition services</p>
+                        </div>
+                        <div class="service-details">
+                            <div class="service-price"><i class="fas fa-dollar-sign"></i> $15,000 – $50,000+</div>
+                            <p class="price-note">One-time project fee</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Cloud architecture design</li>
+                                <li><i class="fas fa-check-circle"></i> Workload assessment</li>
+                                <li><i class="fas fa-check-circle"></i> Data migration</li>
+                                <li><i class="fas fa-check-circle"></i> Application refactoring</li>
+                                <li><i class="fas fa-check-circle"></i> Performance optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-title">Digital Workplace Transformation</h3>
+                            <p class="service-description">Modern collaboration tools, employee experience, and productivity solutions</p>
+                        </div>
+                    <div class="service-details">
+                        <div class="service-price"><i class="fas fa-dollar-sign"></i> $20,000 – $45,000</div>
+                        <p class="price-note">One-time project fee</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Collaboration tool implementation</li>
+                            <li><i class="fas fa-check-circle"></i> Employee experience assessment</li>
+                            <li><i class="fas fa-check-circle"></i> Change management</li>
+                            <li><i class="fas fa-check-circle"></i> Productivity analytics</li>
+                            <li><i class="fas fa-check-circle"></i> Training & adoption programs</li>
+                        </ul>
+                    </div>
+                </div>
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-title">IT Merger & Acquisition Support</h3>
+                            <p class="service-description">IT due diligence, integration planning, and post-merger integration</p>
+                        </div>
+                    <div class="service-details">
+                        <div class="service-price"><i class="fas fa-dollar-sign"></i> $15,000 – $50,000+</div>
+                        <p class="price-note">Project-based pricing</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> IT due diligence</li>
+                            <li><i class="fas fa-check-circle"></i> Integration planning</li>
+                            <li><i class="fas fa-check-circle"></i> Systems consolidation</li>
+                            <li><i class="fas fa-check-circle"></i> Data migration</li>
+                            <li><i class="fas fa-check-circle"></i> Post-merger optimization</li>
+                        </ul>
+                    </div>
+                </div>
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-title">DevOps & Automation Implementation</h3>
+                            <p class="service-description">CI/CD pipeline setup, infrastructure as code, and automation</p>
+                        </div>
+                    <div class="service-details">
+                        <div class="service-price"><i class="fas fa-dollar-sign"></i> $25,000 – $60,000</div>
+                        <p class="price-note">One-time project fee</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> CI/CD pipeline implementation</li>
+                            <li><i class="fas fa-check-circle"></i> Infrastructure as code</li>
+                            <li><i class="fas fa-check-circle"></i> Automated testing framework</li>
+                            <li><i class="fas fa-check-circle"></i> Containerization strategy</li>
+                            <li><i class="fas fa-check-circle"></i> Monitoring & logging setup</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="tab-content" id="recurring">
+            <div class="service-category">
+                <h2 class="category-title"><i class="fas fa-sync-alt"></i> Recurring Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-title">Managed Security Lite</h3>
+                            <p class="service-description">Endpoint protection, patch management, vulnerability scans</p>
+                        </div>
+                        <div class="service-details">
+                            <div class="service-price"><i class="fas fa-dollar-sign"></i> $2,500 – $6,500 / month</div>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Endpoint protection</li>
+                                <li><i class="fas fa-check-circle"></i> Patch management</li>
+                                <li><i class="fas fa-check-circle"></i> Vulnerability scans</li>
+                                <li><i class="fas fa-check-circle"></i> Dark web monitoring</li>
+                                <li><i class="fas fa-check-circle"></i> Security awareness training</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-title">Cloud Cost Optimization / FinOps</h3>
+                            <p class="service-description">Monthly spend analysis, reserved instance planning, savings recommendations</p>
+                        </div>
+                        <div class="service-details">
+                            <div class="service-price"><i class="fas fa-dollar-sign"></i> $1,500 – $5,000 / month</div>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Monthly spend analysis</li>
+                                <li><i class="fas fa-check-circle"></i> Reserved instance planning</li>
+                                <li><i class="fas fa-check-circle"></i> Savings recommendations</li>
+                                <li><i class="fas fa-check-circle"></i> Usage optimization</li>
+                                <li><i class="fas fa-check-circle"></i> Cost allocation reporting</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-title">Microsoft 365 Management & Support</h3>
+                            <p class="service-description">Ongoing administration, security monitoring, and user support</p>
+                        </div>
+                        <div class="service-details">
+                            <div class="service-price"><i class="fas fa-dollar-sign"></i> $1,200 – $3,500 / month</div>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Ongoing administration</li>
+                                <li><i class="fas fa-check-circle"></i> Security monitoring</li>
+                                <li><i class="fas fa-check-circle"></i> User support</li>
+                                <li><i class="fas fa-check-circle"></i> License management</li>
+                                <li><i class="fas fa-check-circle"></i> Performance monitoring</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="hourly">
+            <div class="service-category">
+                <h2 class="category-title"><i class="fas fa-clock"></i> Hourly & Daily Rates</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-title">Standard Consulting</h3>
+                            <p class="service-description">General IT advisory and implementation services</p>
+                        </div>
+                        <div class="service-details">
+                            <div class="service-price"><i class="fas fa-dollar-sign"></i> $175 – $225 / hour</div>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> IT advisory services</li>
+                                <li><i class="fas fa-check-circle"></i> System implementation</li>
+                                <li><i class="fas fa-check-circle"></i> Network configuration</li>
+                                <li><i class="fas fa-check-circle"></i> Troubleshooting & support</li>
+                                <li><i class="fas fa-check-circle"></i> Technology evaluation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-title">Specialized Security / Compliance Consulting</h3>
+                            <p class="service-description">Expert services for security and regulatory compliance</p>
+                        </div>
+                        <div class="service-details">
+                            <div class="service-price"><i class="fas fa-dollar-sign"></i> $225 – $300 / hour</div>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Security architecture</li>
+                                <li><i class="fas fa-check-circle"></i> Compliance framework implementation</li>
+                                <li><i class="fas fa-check-circle"></i> Risk assessment</li>
+                                <li><i class="fas fa-check-circle"></i> Audit preparation</li>
+                                <li><i class="fas fa-check-circle"></i> Incident response</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-title">Microsoft 365 Specialist</h3>
+                            <p class="service-description">Expert consultation for Azure AD, Intune, and Office 365 configurations</p>
+                        </div>
+                        <div class="service-details">
+                            <div class="service-price"><i class="fas fa-dollar-sign"></i> $200 – $275 / hour</div>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Azure AD configuration</li>
+                                <li><i class="fas fa-check-circle"></i> Intune implementation</li>
+                                <li><i class="fas fa-check-circle"></i> Office 365 optimization</li>
+                                <li><i class="fas fa-check-circle"></i> Identity management</li>
+                                <li><i class="fas fa-check-circle"></i> Conditional access policies</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-title">On-Site Daily Rate</h3>
+                            <p class="service-description">For engagements requiring physical presence</p>
+                        </div>
+                        <div class="service-details">
+                            <div class="service-price"><i class="fas fa-dollar-sign"></i> $1,600 – $2,400 / day</div>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> On-site technical support</li>
+                                <li><i class="fas fa-check-circle"></i> Hardware installation</li>
+                                <li><i class="fas fa-check-circle"></i> Infrastructure deployment</li>
+                                <li><i class="fas fa-check-circle"></i> Staff training</li>
+                                <li><i class="fas fa-check-circle"></i> Physical security assessment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-container">
+            <h2 class="cta-title">Ready to Transform Your IT Infrastructure?</h2>
+            <p>Contact us today to discuss how our services can help your business grow securely and efficiently.</p>
+            <a href="mailto:info@northbridgeadvisors.com" class="cta-button">Get in Touch</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <h3>NorthBridge Technology Advisors</h3>
+            <p>Bridging business with technology, securely and seamlessly.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@northbridgeadvisors.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>(555) 123-4567</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>123 Tech Avenue, Innovation City</span>
+                </div>
+            </div>
+            <p>&copy; 2025 NorthBridge Technology Advisors. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons and contents
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+                    
+                    // Show corresponding content
+                    const tabId = btn.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

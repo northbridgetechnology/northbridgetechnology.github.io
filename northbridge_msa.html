@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NorthBridge Technology - Master Services Agreement</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: white;
+            font-size: 14px;
+        }
+        
+        .container {
+            max-width: 12in;
+            margin: 0 auto;
+            padding: 0.75in;
+            background: white;
+            min-height: 11in;
+        }
+        
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 3px solid #3498db;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-placeholder {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            margin-right: 1rem;
+        }
+        
+        .company-info h1 {
+            color: #2c3e50;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        
+        .company-info p {
+            color: #7f8c8d;
+            font-size: 12px;
+            font-weight: 400;
+        }
+        
+        .document-title {
+            text-align: right;
+        }
+        
+        .document-title h2 {
+            color: #2c3e50;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Contact Info Box */
+        .contact-box {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.75rem;
+            border-radius: 6px;
+        }
+
+        .contact-item strong {
+            display: block;
+            font-size: 12px;
+            margin-bottom: 0.25rem;
+            opacity: 0.8;
+        }
+
+        .contact-item span {
+            font-size: 13px;
+        }
+        
+        /* Legal Disclaimer */
+        .disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 0.75rem;
+            margin-bottom: 2rem;
+            font-size: 12px;
+            color: #856404;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        /* Introduction */
+        .intro-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        .intro-section p {
+            color: #34495e;
+            text-align: justify;
+            margin-bottom: 1rem;
+        }
+        
+        .intro-section p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Sections */
+        .section {
+            margin-bottom: 2rem;
+        }
+        
+        .section h3 {
+            color: #2c3e50;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ecf0f1;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-number {
+            background: #3498db;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            margin-right: 0.75rem;
+        }
+        
+        .section p {
+            color: #34495e;
+            margin-bottom: 0.75rem;
+            text-align: justify;
+        }
+        
+        /* Highlighted legal text */
+        .legal-highlight {
+            background: #fff5f5;
+            border: 1px solid #fed7d7;
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-weight: 500;
+            color: #c53030;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 13px;
+        }
+        
+        /* Signature Section */
+        .signature-section {
+            background: #f8f9fa;
+            border: 2px solid #3498db;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .effective-date {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .effective-date input {
+            border: none;
+            border-bottom: 2px solid #3498db;
+            background: transparent;
+            padding: 0.5rem;
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            text-align: center;
+            min-width: 200px;
+        }
+        
+        .signatures-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .signature-block {
+            text-align: center;
+        }
+        
+        .signature-block h4 {
+            color: #2c3e50;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .signature-line {
+            border-bottom: 2px solid #3498db;
+            margin-bottom: 0.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: end;
+            padding-bottom: 0.25rem;
+        }
+        
+        .signature-label {
+            color: #7f8c8d;
+            font-size: 12px;
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+        
+        .name-title-line {
+            border-bottom: 2px solid #3498db;
+            margin: 1rem 0 0.5rem 0;
+            height: 2rem;
+            display: flex;
+            align-items: end;
+            padding-bottom: 0.25rem;
+        }
+        
+        /* Print styles */
+        @media print {
+            .container {
+                max-width: none;
+                margin: 0;
+                padding: 0.5in;
+            }
+            
+            body {
+                font-size: 12px;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+                margin-bottom: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo-placeholder">NB</div>
+                <div class="company-info">
+                    <h1>NorthBridge Technology</h1>
+                    <p>Bridging business with technology, securely and seamlessly.</p>
+                </div>
+            </div>
+            <div class="document-title">
+                <h2>Master Services Agreement</h2>
+                <p><strong>Professional IT Consulting Services</strong></p>
+            </div>
+        </div>
+
+<!-- Contact Information -->
+        <div class="contact-box">
+            <h3>Company Information</h3>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <strong>Address</strong>
+                    <span>411 S Keeler Bartlesville, OK 74003</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Phone</strong>
+                    <span>(539) 337-9567</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    <span>info@northbridgetechnology.com</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Website</strong>
+                    <span>www.northbridgetechnology.com</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Legal Disclaimer -->
+        <div class="disclaimer">
+            This template is provided for informational purposes only and does not constitute legal advice. 
+            Consult an attorney to customize for your jurisdiction and use case.
+        </div>
+
+        <!-- Introduction -->
+        <div class="intro-section">
+            <p>This Master Services Agreement (the "Agreement") is entered into by and between NorthBridge Technology ("Consultant") and the undersigned client ("Client"). This Agreement sets forth the terms and conditions governing the provision of professional IT consulting services by Consultant to Client.</p>
+            <p>Individual Statements of Work ("SOWs") executed by the parties will reference and incorporate this Agreement.</p>
+        </div>
+
+        <!-- Section 1: Services & SOWs -->
+        <div class="section">
+            <h3><span class="section-number">1</span>Services & SOWs</h3>
+            <p>Consultant will provide services as described in one or more SOWs executed by the parties. Each SOW will specify scope, deliverables, timeline, fees, and assumptions. If a conflict exists, the SOW controls for that engagement.</p>
+        </div>
+
+        <!-- Section 2: Term & Termination -->
+        <div class="section">
+            <h3><span class="section-number">2</span>Term & Termination</h3>
+            <p>This Agreement is effective as of the Effective Date and remains in effect until terminated by either party upon thirty (30) days' written notice. Either party may terminate immediately for material breach not cured within ten (10) days of written notice. Upon termination, Client will pay for services rendered and approved expenses incurred through the termination date.</p>
+        </div>
+
+        <!-- Section 3: Fees, Invoicing & Taxes -->
+        <div class="section">
+            <h3><span class="section-number">3</span>Fees, Invoicing & Taxes</h3>
+            <p>Fees will be as set forth in each SOW. Unless otherwise stated, invoices are due net thirty (30) days from date of invoice. Late payments may accrue interest at 1.5% per month or the maximum permitted by law. Client is responsible for applicable sales, use, or similar taxes (excluding taxes on Consultant's income).</p>
+        </div>
+
+        <!-- Section 4: Change Management -->
+        <div class="section">
+            <h3><span class="section-number">4</span>Change Management</h3>
+            <p>Out-of-scope requests will be documented via a written Change Order signed by both parties prior to performance. Fees and schedule may be adjusted accordingly.</p>
+        </div>
+
+        <!-- Section 5: Confidentiality -->
+        <div class="section">
+            <h3><span class="section-number">5</span>Confidentiality</h3>
+            <p>Each party agrees to keep confidential and not disclose to any third party any non-public information disclosed by the other party that is marked or reasonably understood to be confidential ("Confidential Information"). Obligations do not apply to information that is publicly available, rightfully received from a third party, independently developed without use of Confidential Information, or required to be disclosed by law.</p>
+        </div>
+
+        <!-- Section 6: Data Security -->
+        <div class="section">
+            <h3><span class="section-number">6</span>Data Security</h3>
+            <p>Consultant will use commercially reasonable administrative, technical, and physical safeguards to protect Client data processed in connection with services. Consultant does not assume the role of data controller for Client data and will act as a processor where applicable.</p>
+        </div>
+
+        <!-- Section 7: Intellectual Property -->
+        <div class="section">
+            <h3><span class="section-number">7</span>Intellectual Property</h3>
+            <p>Pre-existing IP of each party remains that party's property. Unless otherwise stated in the SOW, Consultant grants Client a perpetual, non-exclusive, royalty-free license to use deliverables for Client's internal business purposes. Consultant may use generalized know-how and non-confidential learnings.</p>
+        </div>
+
+        <!-- Section 8: Warranties & Disclaimers -->
+        <div class="section">
+            <h3><span class="section-number">8</span>Warranties & Disclaimers</h3>
+            <p>Consultant represents it will perform services in a professional and workmanlike manner consistent with industry standards.</p>
+            <div class="legal-highlight">
+                EXCEPT AS EXPRESSLY SET FORTH, CONSULTANT DISCLAIMS ALL OTHER WARRANTIES, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+            </div>
+        </div>
+
+        <!-- Section 9: Limitation of Liability -->
+        <div class="section">
+            <h3><span class="section-number">9</span>Limitation of Liability</h3>
+            <div class="legal-highlight">
+                TO THE MAXIMUM EXTENT PERMITTED BY LAW, NEITHER PARTY WILL BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR LOST PROFITS. CONSULTANT'S TOTAL LIABILITY ARISING OUT OF OR RELATED TO THIS AGREEMENT SHALL NOT EXCEED THE AMOUNTS PAID BY CLIENT UNDER THE APPLICABLE SOW IN THE SIX (6) MONTHS PRECEDING THE CLAIM.
+            </div>
+        </div>
+
+        <!-- Section 10: Non-Solicitation -->
+        <div class="section">
+            <h3><span class="section-number">10</span>Non-Solicitation</h3>
+            <p>During the term of any SOW and for twelve (12) months thereafter, neither party will knowingly solicit for employment any employee of the other party directly involved in the services, without prior written consent.</p>
+        </div>
+
+        <!-- Section 11: Independent Contractor -->
+        <div class="section">
+            <h3><span class="section-number">11</span>Independent Contractor</h3>
+            <p>Consultant is an independent contractor and not an employee, agent, joint venturer, or partner of Client. Consultant will be solely responsible for taxes, benefits, and insurance for its personnel.</p>
+        </div>
+
+        <!-- Section 12: Insurance -->
+        <div class="section">
+            <h3><span class="section-number">12</span>Insurance</h3>
+            <p>Consultant maintains commercially reasonable insurance, which may include professional liability (E&O), general liability, and cyber liability insurance.</p>
+        </div>
+
+        <!-- Section 13: Governing Law -->
+        <div class="section">
+            <h3><span class="section-number">13</span>Governing Law; Dispute Resolution</h3>
+            <p>This Agreement will be governed by the laws of the state specified in the SOW, without regard to conflicts of laws. The parties will attempt good-faith negotiation; if unresolved, disputes may be submitted to mediation before litigation.</p>
+        </div>
+
+        <!-- Section 14: Miscellaneous -->
+        <div class="section">
+            <h3><span class="section-number">14</span>Miscellaneous</h3>
+            <p>This Agreement, together with SOWs, constitutes the entire agreement. Amendments must be in writing. Neither party may assign without consent, except to an affiliate or in connection with a merger or sale of substantially all assets.</p>
+        </div>
+
+        <!-- Signature Section -->
+        <div class="signature-section">
+            <div class="effective-date">
+                <strong>Effective Date:</strong> <input type="text" placeholder="MM/DD/YYYY">
+            </div>
+            
+            <div class="signatures-grid">
+                <div class="signature-block">
+                    <h4>Client (Company Name):</h4>
+                    <div class="signature-line"></div>
+                    <div class="signature-label">Signature</div>
+                    <div class="name-title-line"></div>
+                    <div class="signature-label">Name/Title</div>
+                </div>
+                
+                <div class="signature-block">
+                    <h4>NorthBridge Technology:</h4>
+                    <div class="signature-line"></div>
+                    <div class="signature-label">Signature</div>
+                    <div class="name-title-line">Consultant</div>
+                    <div class="signature-label">Name/Title</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

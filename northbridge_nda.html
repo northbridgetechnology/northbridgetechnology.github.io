@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NorthBridge Technology Advisors - Mutual Non-Disclosure Agreement</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: white;
+            font-size: 14px;
+        }
+        
+        .container {
+            max-width: 16in;
+            margin: 0 auto;
+            padding: 0.75in;
+            background: white;
+            min-height: 11in;
+        }
+        
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 3px solid #3498db;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-placeholder {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            margin-right: 1rem;
+        }
+        
+        .company-info h1 {
+            color: #2c3e50;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        
+        .company-info .tagline {
+            color: #7f8c8d;
+            font-size: 12px;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .document-title {
+            text-align: right;
+        }
+        
+        .document-title h2 {
+            color: #2c3e50;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Contact Info Box */
+        .contact-box {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.75rem;
+            border-radius: 6px;
+        }
+        
+        .contact-item strong {
+            display: block;
+            font-size: 12px;
+            margin-bottom: 0.25rem;
+            opacity: 0.8;
+        }
+        
+        .contact-item span {
+            font-size: 13px;
+        }
+        
+        /* Legal Disclaimer */
+        .legal-disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            font-size: 12px;
+            color: #856404;
+            text-align: center;
+        }
+        
+        .legal-disclaimer strong {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Introduction */
+        .introduction {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #3498db;
+        }
+        
+        .introduction h3 {
+            color: #2c3e50;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        /* Sections */
+        .section {
+            margin-bottom: 2rem;
+            page-break-inside: avoid;
+        }
+        
+        .section h3 {
+            color: #2c3e50;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ecf0f1;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-number {
+            background: #3498db;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            margin-right: 0.75rem;
+        }
+        
+        .section p, .section li {
+            color: #34495e;
+            margin-bottom: 0.75rem;
+            text-align: justify;
+        }
+        
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .section ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .section ul li::before {
+            content: "•";
+            color: #3498db;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        /* Highlighted boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        .highlight-box h4 {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-size: 15px;
+        }
+        
+        /* Agreement Details */
+        .agreement-details {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #3498db;
+        }
+        
+        .agreement-details h3 {
+            color: #2c3e50;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .detail-field {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .detail-field label {
+            color: #34495e;
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .field-input {
+            background: white;
+            border: 2px solid #dee2e6;
+            border-radius: 6px;
+            padding: 0.75rem;
+            font-size: 14px;
+            color: #495057;
+            min-height: 40px;
+        }
+        
+        .field-input.placeholder {
+            background: #fff3cd;
+            border-color: #ffeaa7;
+            color: #856404;
+        }
+        
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        
+        /* Signature Section */
+        .signature-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid #dee2e6;
+        }
+        
+        .signature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .signature-block {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .signature-block h4 {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-align: center;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .signature-field {
+            margin-bottom: 1.5rem;
+        }
+        
+        .signature-field label {
+            display: block;
+            color: #34495e;
+            font-weight: 500;
+            font-size: 13px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .signature-line {
+            border-bottom: 2px solid #dee2e6;
+            height: 40px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .date-field {
+            border-bottom: 1px solid #dee2e6;
+            height: 30px;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Print styles */
+        @media print {
+            .container {
+                max-width: none;
+                margin: 0;
+                padding: 0.5in;
+            }
+            
+            body {
+                font-size: 12px;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+                margin-bottom: 1.5rem;
+            }
+            
+            .signature-section {
+                page-break-before: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo-placeholder">NB</div>
+                <div class="company-info">
+                    <h1>NorthBridge Technology</h1>
+                    <p class="tagline">Bridging business with technology, securely and seamlessly.</p>
+                </div>
+            </div>
+            <div class="document-title">
+                <h2>Mutual Non-Disclosure Agreement</h2>
+                <p style="color: #7f8c8d; font-size: 13px;">(NDA)</p>
+            </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-box">
+            <h3>Company Information</h3>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <strong>Address</strong>
+                    <span>411 S Keeler Bartlesville, OK 74003</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Phone</strong>
+                    <span>(539) 337-9567</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    <span>info@northbridgetechnology.com</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Website</strong>
+                    <span>www.northbridgetechnology.com</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Legal Disclaimer -->
+        <div class="legal-disclaimer">
+            <strong>Legal Disclaimer</strong>
+            This template is provided for informational purposes only and does not constitute legal advice. Consult an attorney to customize for your jurisdiction and use case.
+        </div>
+
+        <!-- Introduction -->
+        <div class="introduction">
+            <h3>Agreement Overview</h3>
+            <p>This Mutual Non-Disclosure Agreement (the "Agreement") is entered into by and between NorthBridge Technology and the undersigned counterparty (each a "Party" and collectively the "Parties") for the purpose of protecting Confidential Information disclosed in connection with discussions and business opportunities.</p>
+        </div>
+
+        <!-- Agreement Details -->
+        <div class="agreement-details">
+            <h3>Agreement Details</h3>
+            <div class="details-grid">
+                <div class="detail-field">
+                    <label>Effective Date:</label>
+                    <div class="field-input placeholder">[MM/DD/YYYY]</div>
+                </div>
+                <div class="detail-field">
+                    <label>Governing State:</label>
+                    <div class="field-input placeholder">[State Name]</div>
+                </div>
+                <div class="detail-field full-width">
+                    <label>Purpose of Disclosure:</label>
+                    <div class="field-input placeholder">[Describe the business purpose, e.g., "Evaluation of potential IT consulting engagement"]</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 1: Confidential Information -->
+        <div class="section">
+            <h3><span class="section-number">1</span>Definition of Confidential Information</h3>
+            <p>"Confidential Information" means any non-public information disclosed by either Party that is designated as confidential or that should reasonably be considered confidential given the nature of the information and circumstances of disclosure.</p>
+            
+            <div class="highlight-box">
+                <h4>Examples of Confidential Information Include:</h4>
+                <ul>
+                    <li>Technical specifications, system architectures, and infrastructure details</li>
+                    <li>Business plans, strategies, and financial information</li>
+                    <li>Customer lists, vendor relationships, and pricing information</li>
+                    <li>Security protocols, vulnerabilities, and assessment results</li>
+                    <li>Proprietary methodologies, processes, and know-how</li>
+                    <li>Any information marked or designated as "Confidential"</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 2: Obligations -->
+        <div class="section">
+            <h3><span class="section-number">2</span>Confidentiality Obligations</h3>
+            <p>The receiving Party shall:</p>
+            
+            <div class="highlight-box">
+                <h4>Core Obligations</h4>
+                <ul>
+                    <li><strong>Limited Use:</strong> Use the Confidential Information solely for the agreed purpose as specified in this Agreement</li>
+                    <li><strong>Restricted Disclosure:</strong> Limit disclosure to employees, contractors, and advisors with a legitimate need to know who are bound by similar confidentiality obligations</li>
+                    <li><strong>Reasonable Care:</strong> Protect the Confidential Information using the same degree of care used to protect its own confidential information, but no less than reasonable care</li>
+                    <li><strong>Return/Destruction:</strong> Upon request or termination of discussions, promptly return or destroy all Confidential Information</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 3: Exclusions -->
+        <div class="section">
+            <h3><span class="section-number">3</span>Exclusions from Confidentiality</h3>
+            <p>The confidentiality obligations set forth in this Agreement do not apply to information that:</p>
+            
+            <div class="highlight-box">
+                <h4>Information Excluded from Protection</h4>
+                <ul>
+                    <li>Is or becomes publicly available through no breach of this Agreement</li>
+                    <li>Is rightfully received from a third party without duty of confidentiality</li>
+                    <li>Is independently developed without use of or reference to Confidential Information</li>
+                    <li>Is required to be disclosed by law, court order, or government regulation (with prior notice to disclosing party when legally permissible)</li>
+                    <li>Was known to the receiving party prior to disclosure, as evidenced by written records</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 4: Term -->
+        <div class="section">
+            <h3><span class="section-number">4</span>Term and Duration</h3>
+            <div class="highlight-box">
+                <h4>Agreement Duration</h4>
+                <ul>
+                    <li><strong>Effective Period:</strong> This Agreement commences on the Effective Date and continues for three (3) years</li>
+                    <li><strong>Survival:</strong> Confidentiality obligations survive for three (3) years after termination of this Agreement</li>
+                    <li><strong>Trade Secrets:</strong> Trade secrets remain protected as long as they qualify as trade secrets under applicable law</li>
+                    <li><strong>Termination:</strong> Either party may terminate this Agreement with thirty (30) days written notice</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 5: No License -->
+        <div class="section">
+            <h3><span class="section-number">5</span>No Grant of Rights</h3>
+            <p>No rights or licenses are granted by either Party under any patents, copyrights, trademarks, or other intellectual property rights except as expressly set forth in a separate written agreement between the parties.</p>
+            
+            <div class="highlight-box">
+                <h4>Important Clarifications</h4>
+                <ul>
+                    <li>This Agreement does not create a partnership, joint venture, or agency relationship</li>
+                    <li>No obligation to enter into future business relationships</li>
+                    <li>No warranty regarding the accuracy or completeness of Confidential Information</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 6: Return/Destruction -->
+        <div class="section">
+            <h3><span class="section-number">6</span>Return or Destruction of Information</h3>
+            <p>Upon written request by the disclosing Party, or upon termination of discussions, the receiving Party will promptly:</p>
+            
+            <div class="highlight-box">
+                <h4>Required Actions</h4>
+                <ul>
+                    <li>Return all documents and materials containing Confidential Information</li>
+                    <li>Destroy all copies, notes, and derivative works containing Confidential Information</li>
+                    <li>Provide written certification of such return or destruction upon request</li>
+                    <li><strong>Exception:</strong> Routine archival backups and information required to be retained by law may be retained subject to continued confidentiality obligations</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 7: Remedies -->
+        <div class="section">
+            <h3><span class="section-number">7</span>Remedies and Enforcement</h3>
+            <p>The parties acknowledge that unauthorized use or disclosure of Confidential Information may cause irreparable harm for which monetary damages would be inadequate.</p>
+            
+            <div class="highlight-box">
+                <h4>Available Remedies</h4>
+                <ul>
+                    <li><strong>Injunctive Relief:</strong> The disclosing Party is entitled to seek immediate injunctive relief</li>
+                    <li><strong>Monetary Damages:</strong> Recovery of actual damages and any profits derived from unauthorized use</li>
+                    <li><strong>Attorney's Fees:</strong> Prevailing party may recover reasonable attorney's fees and costs</li>
+                    <li><strong>Cumulative Remedies:</strong> All remedies are cumulative and not exclusive</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 8: Miscellaneous -->
+        <div class="section">
+            <h3><span class="section-number">8</span>General Provisions</h3>
+            <div class="highlight-box">
+                <h4>Agreement Terms</h4>
+                <ul>
+                    <li><strong>Governing Law:</strong> This Agreement is governed by the laws of the state specified above</li>
+                    <li><strong>Entire Agreement:</strong> Constitutes the entire agreement regarding confidentiality between the parties</li>
+                    <li><strong>Amendments:</strong> Must be in writing and signed by both parties</li>
+                    <li><strong>Electronic Signatures:</strong> Electronic signatures are acceptable and legally binding</li>
+                    <li><strong>Severability:</strong> If any provision is unenforceable, the remainder remains in effect</li>
+                    <li><strong>Assignment:</strong> May not be assigned without prior written consent</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Signature Section -->
+        <div class="signature-section">
+            <h3>Execution and Authorization</h3>
+            <p>By signing below, both parties acknowledge they have read, understood, and agree to be bound by the terms of this Mutual Non-Disclosure Agreement.</p>
+            
+            <div class="signature-grid">
+                <div class="signature-block">
+                    <h4>Counterparty (Company/Individual)</h4>
+                    <div class="signature-field">
+                        <label>Signature:</label>
+                        <div class="signature-line"></div>
+                        <div class="date-field"></div>
+                        <small>Date</small>
+                    </div>
+                    <div class="signature-field">
+                        <label>Print Name:</label>
+                        <div class="signature-line"></div>
+                    </div>
+                    <div class="signature-field">
+                        <label>Title:</label>
+                        <div class="signature-line"></div>
+                    </div>
+                    <div class="signature-field">
+                        <label>Company:</label>
+                        <div class="signature-line"></div>
+                    </div>
+                </div>
+                
+                <div class="signature-block">
+                    <h4>NorthBridge Technology</h4>
+                    <div class="signature-field">
+                        <label>Signature:</label>
+                        <div class="signature-line"></div>
+                        <div class="date-field"></div>
+                        <small>Date</small>
+                    </div>
+                    <div class="signature-field">
+                        <label>Print Name:</label>
+                        <div class="signature-line"></div>
+                    </div>
+                    <div class="signature-field">
+                        <label>Title:</label>
+                        <div class="signature-line"></div>
+                        <small>Consultant</small>
+                    </div>
+                    <div class="signature-field">
+                        <label>Company:</label>
+                        <div class="signature-line"></div>
+                        <small>NorthBridge Technology</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ecf0f1; color: #7f8c8d; font-size: 12px;">
+            <p>NorthBridge Technology | 411 S Keeler Bartlesville, OK 74003</p>
+            <p>Phone: (539) 337-9567 | Email: info@northbridgetechnology.com | Web: www.northbridgetechnology.com</p>
+        </div>
+    </div>
+</body>
+</html>
+        
+        
