@@ -9,6 +9,7 @@ Disallow: /css/
 Disallow: /js/
 Disallow: /drafts/
 Disallow: /private/
+Disallow: /blah/
 
 
 # Allow key content sections
