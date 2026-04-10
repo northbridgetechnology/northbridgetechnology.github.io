@@ -311,50 +311,6 @@
     .badge:hover { border-color: var(--accent); transform: translateY(-2px); }
     .badge i { margin-right: 0.4rem; color: var(--accent); }
 
-    /* ── DEPLOY SECTION ── */
-    .deploy-box {
-      background: var(--white);
-      border-radius: 12px;
-      padding: 2.5rem;
-      box-shadow: var(--shadow);
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .deploy-box h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.3rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-    .deploy-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-    .deploy-step {
-      text-align: center;
-    }
-    .deploy-step .step-num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      background: var(--accent);
-      color: var(--white);
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-    }
-    .deploy-step p {
-      font-size: 0.9rem;
-      color: var(--text-light);
-      font-weight: 500;
-    }
-
     /* ── CTA ── */
     .cta-section {
       text-align: center;
@@ -511,7 +467,7 @@
       <div class="diff-card">
         <i class="fas fa-server" aria-hidden="true"></i>
         <h3>Self-Hosted & Fully Yours</h3>
-        <p>Deploy on your infrastructure with Docker Compose. Your data never leaves your network. No per-seat fees, ever.</p>
+        <p>Deploy on your infrastructure in minutes with a single Docker Compose command. Simple, quick, and efficient &mdash; your data never leaves your network. No per-seat fees, ever.</p>
       </div>
       <div class="diff-card">
         <i class="fas fa-file-export" aria-hidden="true"></i>
@@ -569,35 +525,6 @@
       <span class="badge"><i class="fab fa-docker"></i>Docker Compose</span>
       <span class="badge"><i class="fas fa-server"></i>Nginx</span>
       <span class="badge"><i class="fas fa-lock"></i>Let's Encrypt TLS</span>
-    </div>
-  </section>
-
-  <!-- ════ DEPLOY ════ -->
-  <section>
-    <h2>Up and Running in Minutes</h2>
-    <p class="section-subtitle">Six containers. One command. Full helpdesk.</p>
-
-    <div class="deploy-box">
-      <h3>Docker Compose Deployment</h3>
-      <div class="deploy-steps">
-        <div class="deploy-step">
-          <div class="step-num">1</div>
-          <p>Clone the repo</p>
-        </div>
-        <div class="deploy-step">
-          <div class="step-num">2</div>
-          <p>Configure .env</p>
-        </div>
-        <div class="deploy-step">
-          <div class="step-num">3</div>
-          <p>docker compose up</p>
-        </div>
-        <div class="deploy-step">
-          <div class="step-num">4</div>
-          <p>You're live</p>
-        </div>
-      </div>
-      <p style="color: var(--text-light); font-size: 0.95rem;">Runs PostgreSQL, Redis, FastAPI backend, Celery worker, React frontend, and Nginx reverse proxy &mdash; all orchestrated automatically.</p>
     </div>
   </section>
 
