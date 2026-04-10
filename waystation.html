@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Waystation - Self-Hosted Helpdesk & Ticketing System | NorthBridge Technology</title>
+  <meta name="description" content="Waystation is a self-hosted helpdesk and ticketing system with approval workflows, SLA tracking, Kanban boards, automation rules, and a customer portal. No per-seat licensing.">
+  <meta name="keywords" content="helpdesk, ticketing system, self-hosted, IT service management, ITSM, customer portal, SLA tracking, Kanban, approval workflows, NorthBridge Technology">
+  <meta name="author" content="NorthBridge Technology">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.northbridgetechnology.com/waystation.html">
+  <meta property="og:title" content="Waystation - Self-Hosted Helpdesk & Ticketing System">
+  <meta property="og:description" content="Enterprise helpdesk features without vendor lock-in. Self-hosted, fully containerized, and always yours.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.northbridgetechnology.com/waystation.html">
+  <meta property="og:site_name" content="NorthBridge Technology">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Waystation - Self-Hosted Helpdesk & Ticketing System">
+  <meta name="twitter:description" content="Enterprise helpdesk features without vendor lock-in. Self-hosted, fully containerized, and always yours.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Waystation",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Docker / Linux",
+    "description": "Self-hosted helpdesk and ticketing system with approval workflows, SLA tracking, Kanban boards, and a customer portal.",
+    "author": {
+      "@type": "Organization",
+      "name": "NorthBridge Technology",
+      "url": "https://www.northbridgetechnology.com"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <style>
+    :root {
+      --primary: #1f2a44;
+      --primary-light: #2f3b5c;
+      --secondary: #162036;
+      --accent: #4a7b9d;
+      --text: #333;
+      --text-light: #666;
+      --background: #f8f9fb;
+      --white: #ffffff;
+      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+      --transition: all 0.3s ease;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text);
+      background: var(--background);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--secondary);
+      padding: 1.2rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    nav a {
+      color: var(--white);
+      margin: 0 1.2rem;
+      text-decoration: none;
+      font-weight: 500;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      transition: var(--transition);
+      position: relative;
+      padding: 0.5rem 0;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--accent);
+      transition: var(--transition);
+    }
+    nav a:hover::after { width: 100%; }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      padding: 1rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: var(--white);
+      padding: 5rem 2rem 6rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.05' d='M0,224L48,213.3C96,203,192,181,288,160C384,139,480,117,576,122.7C672,128,768,160,864,170.7C960,181,1056,171,1152,165.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+    .hero-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px; height: 100px;
+      background: var(--white);
+      border-radius: 50%;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .hero-icon i { font-size: 2.8rem; color: var(--primary); }
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+    }
+    .hero .tagline {
+      font-size: 1.4rem;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+    }
+    .hero .subtitle {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      opacity: 0.8;
+      line-height: 1.7;
+    }
+    .hero-buttons a {
+      display: inline-block;
+      padding: 1rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      transition: var(--transition);
+      margin: 0 0.5rem;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+      box-shadow: 0 4px 15px rgba(74,123,157,0.4);
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(74,123,157,0.5); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+    .btn-secondary:hover { border-color: var(--white); transform: translateY(-3px); }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      text-align: center;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 80px; height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-light);
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      font-size: 1.1rem;
+    }
+
+    /* ── FEATURE CARDS ── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .feature-card {
+      background: var(--white);
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      text-align: center;
+      border-top: 4px solid var(--accent);
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    }
+    .feature-card .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px; height: 60px;
+      border-radius: 12px;
+      background: rgba(74,123,157,0.1);
+      margin-bottom: 1.2rem;
+    }
+    .feature-card .icon i { font-size: 1.5rem; color: var(--accent); }
+    .feature-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      color: var(--primary);
+    }
+    .feature-card p { color: var(--text-light); font-size: 0.95rem; }
+
+    /* ── DIFFERENTIATORS ── */
+    .diff-section {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      padding: 5rem 2rem;
+      max-width: none;
+      color: var(--white);
+    }
+    .diff-section h2 { color: var(--white); }
+    .diff-section h2::after { background: var(--accent); }
+    .diff-section .section-subtitle { color: rgba(255,255,255,0.7); }
+    .diff-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .diff-card {
+      background: rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 2rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: var(--transition);
+    }
+    .diff-card:hover {
+      background: rgba(255,255,255,0.12);
+      transform: translateY(-3px);
+    }
+    .diff-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.15rem;
+      margin-bottom: 0.6rem;
+      color: var(--white);
+    }
+    .diff-card p { color: rgba(255,255,255,0.75); font-size: 0.95rem; }
+    .diff-card i { color: var(--accent); font-size: 1.4rem; margin-bottom: 0.8rem; display: block; }
+
+    /* ── TECH STACK ── */
+    .stack-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .stack-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--white);
+      border: 1px solid #e0e4ea;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--primary);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      transition: var(--transition);
+    }
+    .badge:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .badge i { margin-right: 0.4rem; color: var(--accent); }
+
+    /* ── DEPLOY SECTION ── */
+    .deploy-box {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .deploy-box h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .deploy-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .deploy-step {
+      text-align: center;
+    }
+    .deploy-step .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .deploy-step p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      text-align: center;
+      padding: 4rem 2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .cta-section h2 { margin-bottom: 1rem; }
+    .cta-section p { color: var(--text-light); margin-bottom: 2rem; font-size: 1.1rem; }
+    .cta a {
+      background: linear-gradient(to right, var(--primary) 0%, var(--primary-light) 100%);
+      color: var(--white);
+      padding: 1.2rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      display: inline-block;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+    }
+    .cta a:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--primary);
+      color: var(--white);
+      text-align: center;
+      padding: 3rem 2rem;
+      margin-top: 2rem;
+    }
+    footer a { color: #fff; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.4rem; }
+      .hero .tagline { font-size: 1.15rem; }
+      nav a { margin: 0 0.8rem; font-size: 1rem; }
+      section { padding: 3rem 1.5rem; }
+      h2 { font-size: 2rem; }
+      .hero-buttons a { display: block; margin: 0.5rem auto; max-width: 260px; }
+    }
+    @media (max-width: 480px) {
+      nav a { display: block; margin: 0.5rem 0; }
+      .hero { padding: 3rem 1.5rem 4rem; }
+      .hero h1 { font-size: 2rem; }
+      .hero-icon { width: 80px; height: 80px; }
+      .hero-icon i { font-size: 2.2rem; }
+      .diff-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#whitepapers">Whitepapers</a>
+    <a href="tech_stack.html">Tech Stack</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> &gt; Waystation
+  </div>
+
+  <!-- ════ HERO ════ -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-icon">
+        <i class="fas fa-route" aria-hidden="true"></i>
+      </div>
+      <h1>Waystation</h1>
+      <p class="tagline">The self-hosted helpdesk that's always yours.</p>
+      <p class="subtitle">Enterprise-grade ticketing, approval workflows, SLA tracking, and a customer portal &mdash; without per-seat licensing or vendor lock-in.</p>
+      <div class="hero-buttons">
+        <a href="contact_form.html" class="btn-primary">Request a Demo</a>
+        <a href="#features" class="btn-secondary">Explore Features</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ FEATURES ════ -->
+  <section id="features">
+    <h2>Everything Your Team Needs</h2>
+    <p class="section-subtitle">From ticket creation to resolution analytics, Waystation covers the full support lifecycle.</p>
+
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="icon"><i class="fas fa-ticket" aria-hidden="true"></i></div>
+        <h3>Ticket Management</h3>
+        <p>Per-project numbering, nine statuses, four priority levels, custom ticket types with colors and icons, parent/child relationships, and bulk operations.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon"><i class="fas fa-users" aria-hidden="true"></i></div>
+        <h3>Customer Portal</h3>
+        <p>Customers submit tickets through branded forms &mdash; no account required. Magic-link access lets them track progress, reply, and upload attachments.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon"><i class="fas fa-check-double" aria-hidden="true"></i></div>
+        <h3>Approval Workflows</h3>
+        <p>Multi-round approvals with "any-one" or "all-required" modes. External approvers respond via magic link &mdash; no login needed.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon"><i class="fas fa-columns" aria-hidden="true"></i></div>
+        <h3>Kanban & Sprints</h3>
+        <p>Drag-and-drop Kanban boards with WIP limits, plus full sprint management with story-point tracking and retrospective data.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon"><i class="fas fa-stopwatch" aria-hidden="true"></i></div>
+        <h3>SLA Tracking</h3>
+        <p>Define response and resolution targets per project. Business-hours-aware calculations with holiday exclusions and breach-triggered automation.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+        <h3>Automation Engine</h3>
+        <p>Build rules with eight trigger types, flexible conditions, and actions like status changes, assignments, tagging, and email notifications.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon"><i class="fas fa-chart-bar" aria-hidden="true"></i></div>
+        <h3>Reporting & Analytics</h3>
+        <p>Custom reports with volume charts, SLA compliance metrics, resolution-time distributions, and agent performance. Export to XLSX or PDF.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon"><i class="fas fa-envelope-open-text" aria-hidden="true"></i></div>
+        <h3>Email Integration</h3>
+        <p>Ingest tickets from Office 365 and Exchange via Microsoft Graph. Threaded replies are matched to existing tickets automatically.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+        <h3>Identity & Access</h3>
+        <p>Local authentication with JWT, Azure AD single sign-on, and SCIM 2.0 automated provisioning from Azure AD or Okta.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════ DIFFERENTIATORS ════ -->
+  <section class="diff-section">
+    <h2>Built Different</h2>
+    <p class="section-subtitle">The features that set Waystation apart from SaaS ticketing tools.</p>
+
+    <div class="diff-grid">
+      <div class="diff-card">
+        <i class="fas fa-server" aria-hidden="true"></i>
+        <h3>Self-Hosted & Fully Yours</h3>
+        <p>Deploy on your infrastructure with Docker Compose. Your data never leaves your network. No per-seat fees, ever.</p>
+      </div>
+      <div class="diff-card">
+        <i class="fas fa-file-export" aria-hidden="true"></i>
+        <h3>Compliance-Ready Exports</h3>
+        <p>Export tickets as ZIP bundles with PDF metadata and all attachments &mdash; ready for audits and regulatory review.</p>
+      </div>
+      <div class="diff-card">
+        <i class="fas fa-link" aria-hidden="true"></i>
+        <h3>Magic-Link Approvals</h3>
+        <p>External stakeholders approve requests via a secure email link. No accounts to manage, no friction.</p>
+      </div>
+      <div class="diff-card">
+        <i class="fas fa-hdd" aria-hidden="true"></i>
+        <h3>Flexible Storage Backends</h3>
+        <p>Store attachments locally or switch seamlessly to AWS S3, Azure Blob Storage, or Google Cloud Storage.</p>
+      </div>
+      <div class="diff-card">
+        <i class="fas fa-project-diagram" aria-hidden="true"></i>
+        <h3>Multi-Project Architecture</h3>
+        <p>Independent ticket numbering, custom statuses, ticket types, and SLA rules per project &mdash; all from one instance.</p>
+      </div>
+      <div class="diff-card">
+        <i class="fas fa-database" aria-hidden="true"></i>
+        <h3>Built-In Backup & Restore</h3>
+        <p>Scheduled PostgreSQL backups with optional upload to SharePoint. One-click browser-based restore when you need it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ TECH STACK ════ -->
+  <section id="tech">
+    <h2>Modern Stack, Production Ready</h2>
+    <p class="section-subtitle">Built with technologies your team already knows and trusts.</p>
+
+    <p class="stack-label">Backend</p>
+    <div class="stack-row">
+      <span class="badge"><i class="fab fa-python"></i>FastAPI</span>
+      <span class="badge"><i class="fas fa-database"></i>PostgreSQL 16</span>
+      <span class="badge"><i class="fas fa-memory"></i>Redis 7</span>
+      <span class="badge"><i class="fas fa-cogs"></i>Celery</span>
+      <span class="badge"><i class="fas fa-code-branch"></i>SQLAlchemy 2</span>
+    </div>
+
+    <p class="stack-label">Frontend</p>
+    <div class="stack-row">
+      <span class="badge"><i class="fab fa-react"></i>React 18</span>
+      <span class="badge"><i class="fab fa-js"></i>TypeScript</span>
+      <span class="badge"><i class="fas fa-wind"></i>Tailwind CSS</span>
+      <span class="badge"><i class="fas fa-cubes"></i>Radix UI</span>
+      <span class="badge"><i class="fas fa-bolt"></i>Vite</span>
+    </div>
+
+    <p class="stack-label">Infrastructure</p>
+    <div class="stack-row">
+      <span class="badge"><i class="fab fa-docker"></i>Docker Compose</span>
+      <span class="badge"><i class="fas fa-server"></i>Nginx</span>
+      <span class="badge"><i class="fas fa-lock"></i>Let's Encrypt TLS</span>
+    </div>
+  </section>
+
+  <!-- ════ DEPLOY ════ -->
+  <section>
+    <h2>Up and Running in Minutes</h2>
+    <p class="section-subtitle">Six containers. One command. Full helpdesk.</p>
+
+    <div class="deploy-box">
+      <h3>Docker Compose Deployment</h3>
+      <div class="deploy-steps">
+        <div class="deploy-step">
+          <div class="step-num">1</div>
+          <p>Clone the repo</p>
+        </div>
+        <div class="deploy-step">
+          <div class="step-num">2</div>
+          <p>Configure .env</p>
+        </div>
+        <div class="deploy-step">
+          <div class="step-num">3</div>
+          <p>docker compose up</p>
+        </div>
+        <div class="deploy-step">
+          <div class="step-num">4</div>
+          <p>You're live</p>
+        </div>
+      </div>
+      <p style="color: var(--text-light); font-size: 0.95rem;">Runs PostgreSQL, Redis, FastAPI backend, Celery worker, React frontend, and Nginx reverse proxy &mdash; all orchestrated automatically.</p>
+    </div>
+  </section>
+
+  <!-- ════ CTA ════ -->
+  <section class="cta-section">
+    <h2>Ready to Take Control of Your Helpdesk?</h2>
+    <p>See how Waystation can streamline your team's support workflow. No commitments, no per-seat pricing &mdash; just a conversation.</p>
+    <div class="cta">
+      <a href="contact_form.html">Get in Touch</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 NorthBridge Technology. All rights reserved.</p>
+    <p><a href="privacy_policy.html">Privacy Policy</a> | <a href="terms_and_conditions.html">Terms and Conditions</a> | <a href="sitemap.html">Sitemap</a></p>
+  </footer>
+
+</body>
+</html>
