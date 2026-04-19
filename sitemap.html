@@ -71,6 +71,22 @@
 
     footer { background: var(--primary); color: var(--white); text-align: center; padding: 2.5rem 1.5rem; }
     footer a { color: #fff; }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      header p { font-size: 1rem; }
+      .logo { width: 80px; height: 80px; padding: 15px; }
+      main { padding: 2rem 1rem 3rem; }
+      h2 { font-size: 1.7rem; }
+      .breadcrumb { padding: 0.8rem 1rem; }
+    }
+
+    @media (max-width: 480px) {
+      nav a { display: block; margin: 0.4rem 0; font-size: 0.95rem; }
+      header { padding: 2rem 1rem; }
+      header h1 { font-size: 1.7rem; }
+      .sitemap-wrap { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -95,6 +111,7 @@
   <nav aria-label="Primary">
     <a href="index.html">Home</a>
     <a href="index.html#services">Services</a>
+    <a href="waystation.html">Waystation</a>
     <a href="index.html#whitepapers">Whitepapers</a>
     <a href="tech_stack.html">Tech Stack</a>
     <a href="index.html#about">About</a>
@@ -108,7 +125,7 @@
       <section class="card">
         <h3><i class="fa-solid fa-earth-americas" aria-hidden="true"></i> Core Pages</h3>
         <ul>
-          <li><a href="index.html">Home</a></li><li><a href="index.html#services">Services</a></li><li><a href="index.html#whitepapers">Whitepapers</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.html">Home</a></li><li><a href="index.html#services">Services</a></li><li><a href="waystation.html">Waystation</a></li><li><a href="index.html#whitepapers">Whitepapers</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#contact">Contact</a></li>
         </ul>
         <div class="meta">On-page sections match the navigation.</div>
       </section>
