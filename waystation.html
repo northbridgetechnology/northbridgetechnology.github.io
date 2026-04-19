@@ -386,7 +386,7 @@
       </div>
       <h1>Waystation</h1>
       <p class="tagline">The self-hosted helpdesk that's always yours.</p>
-      <p class="subtitle">Enterprise-grade ticketing, approval workflows, SLA tracking, and a customer portal &mdash; without per-seat licensing or vendor lock-in.</p>
+      <p class="subtitle">Enterprise-grade ticketing, approval workflows, SLA tracking, multi-project boards, and a customer portal &mdash; without per-seat licensing or vendor lock-in.</p>
       <div class="hero-buttons">
         <a href="contact_form.html" class="btn-primary">Request a Demo</a>
         <a href="#features" class="btn-secondary">Explore Features</a>
@@ -402,9 +402,15 @@
     <div class="features-grid">
 
       <div class="feature-card">
+        <div class="icon"><i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i></div>
+        <h3>Guided Setup Wizard</h3>
+        <p>A 12-step first-run wizard walks admins through every configuration — admin account, projects, ticket types, custom fields, mail, SSO, storage, and backup — before any agent logs in.</p>
+      </div>
+
+      <div class="feature-card">
         <div class="icon"><i class="fas fa-ticket" aria-hidden="true"></i></div>
         <h3>Ticket Management</h3>
-        <p>Per-project numbering, nine statuses, four priority levels, custom ticket types with colors and icons, parent/child relationships, and bulk operations.</p>
+        <p>Per-project numbering, nine statuses, four priority levels, custom ticket types with colors and icons, parent/child relationships, bulk operations, and ticket merging with full customer redirect and audit trail.</p>
       </div>
 
       <div class="feature-card">
@@ -422,25 +428,25 @@
       <div class="feature-card">
         <div class="icon"><i class="fas fa-columns" aria-hidden="true"></i></div>
         <h3>Kanban & Sprints</h3>
-        <p>Drag-and-drop Kanban boards with WIP limits, plus full sprint management with story-point tracking and retrospective data.</p>
+        <p>Drag-and-drop Kanban boards with WIP limits and sprint management with story-point tracking. Create cross-project boards to manage tickets from multiple projects in a single unified view.</p>
       </div>
 
       <div class="feature-card">
         <div class="icon"><i class="fas fa-stopwatch" aria-hidden="true"></i></div>
         <h3>SLA Tracking</h3>
-        <p>Define response and resolution targets per project. Business-hours-aware calculations with holiday exclusions and breach-triggered automation.</p>
+        <p>Define per-project, per-priority response and resolution targets. Business-hours-aware calculations with first-touch and first-response timestamp tracking, holiday exclusions, and breach-triggered automation.</p>
       </div>
 
       <div class="feature-card">
         <div class="icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
         <h3>Automation Engine</h3>
-        <p>Build rules with eight trigger types, flexible conditions, and actions like status changes, assignments, tagging, and email notifications.</p>
+        <p>Build rules with eight trigger types, flexible AND/OR conditions, and actions like status changes, assignments, tagging, and email notifications. Mark rules as default to auto-apply them across all projects.</p>
       </div>
 
       <div class="feature-card">
         <div class="icon"><i class="fas fa-chart-bar" aria-hidden="true"></i></div>
         <h3>Reporting & Analytics</h3>
-        <p>Custom reports with volume charts, SLA compliance metrics, resolution-time distributions, and agent performance. Export to XLSX or PDF.</p>
+        <p>Custom reports with volume charts, SLA compliance metrics, resolution-time distributions, and agent performance. Export to XLSX or PDF. Share reports directly with customers via a secure link.</p>
       </div>
 
       <div class="feature-card">
@@ -453,6 +459,18 @@
         <div class="icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
         <h3>Identity & Access</h3>
         <p>Local authentication with JWT, Azure AD single sign-on, and SCIM 2.0 automated provisioning from Azure AD or Okta.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon"><i class="fas fa-comment-dots" aria-hidden="true"></i></div>
+        <h3>Targeted Comments</h3>
+        <p>When multiple customers share a ticket, direct comments at all customers or a specific individual — keeping communications relevant and private where it matters.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon"><i class="fas fa-webhook" aria-hidden="true"></i></div>
+        <h3>Webhook Ingestion</h3>
+        <p>Accept tickets from any external system via incoming webhooks. Use JMESPath field mapping to extract data from any payload shape — no code changes required.</p>
       </div>
 
     </div>
@@ -487,12 +505,22 @@
       <div class="diff-card">
         <i class="fas fa-project-diagram" aria-hidden="true"></i>
         <h3>Multi-Project Architecture</h3>
-        <p>Independent ticket numbering, custom statuses, ticket types, and SLA rules per project &mdash; all from one instance.</p>
+        <p>Independent ticket numbering, custom statuses, ticket types, and SLA rules per project. Cross-project Kanban boards give agents a unified view across any combination of projects.</p>
       </div>
       <div class="diff-card">
         <i class="fas fa-database" aria-hidden="true"></i>
         <h3>Built-In Backup & Restore</h3>
         <p>Scheduled PostgreSQL backups with optional upload to SharePoint. One-click browser-based restore when you need it.</p>
+      </div>
+      <div class="diff-card">
+        <i class="fas fa-arrows-left-right" aria-hidden="true"></i>
+        <h3>Safe Ticket Moves</h3>
+        <p>Moving a ticket between projects? Custom field data is preserved where names match. Unmapped fields become a documented internal comment &mdash; zero data loss.</p>
+      </div>
+      <div class="diff-card">
+        <i class="fas fa-fingerprint" aria-hidden="true"></i>
+        <h3>IP-Level Audit Logging</h3>
+        <p>Every admin action is logged with timestamp, user, and source IP address &mdash; giving you a forensic-grade audit trail for compliance and security reviews.</p>
       </div>
     </div>
   </section>
