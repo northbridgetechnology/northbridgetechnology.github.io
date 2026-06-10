@@ -37,7 +37,6 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Open Sans', sans-serif; color: var(--text); background: var(--background); line-height: 1.6; }
 
-    /* ── NAVIGATION ── */
     nav { background: var(--secondary); padding: 0 1.2rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; min-height: 56px; }
     .nav-links { display: flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 0; }
     nav a { color: var(--white); margin: 0 1.2rem; text-decoration: none; font-weight: 500; font-family: 'Montserrat', sans-serif; font-size: 1.1rem; transition: var(--transition); position: relative; padding: 1rem 0; display: inline-block; }
@@ -79,7 +78,6 @@
     h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: var(--accent); border-radius: 2px; }
     .section-subtitle { text-align: center; color: var(--text-light); max-width: 720px; margin: 0 auto 3rem; font-size: 1.05rem; }
 
-    /* ── PRODUCT PRICING CARDS ── */
     .prod-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; align-items: start; }
     .prod-card { background: var(--white); border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; transition: var(--transition); display: flex; flex-direction: column; }
     .prod-card:hover { transform: translateY(-6px); box-shadow: 0 14px 28px rgba(0,0,0,0.12); }
@@ -103,7 +101,6 @@
     .prod-cta { display: block; text-align: center; padding: 0.9rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-family: 'Montserrat', sans-serif; color: #fff; transition: var(--transition); }
     .prod-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
 
-    /* ── BUNDLES ── */
     .dark-section { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); padding: 5rem 2rem; max-width: none; color: #fff; }
     .dark-inner { max-width: 1200px; margin: 0 auto; }
     .dark-section h2 { color: #fff; }
@@ -123,7 +120,6 @@
     .bundle-cta { display: block; text-align: center; padding: 0.9rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-family: 'Montserrat', sans-serif; background: var(--accent); color: #fff; transition: var(--transition); }
     .bundle-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
 
-    /* ── SUPPORT ── */
     .support-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
     .support-card { background: var(--white); border-radius: 12px; box-shadow: var(--shadow); overflow: hidden; transition: var(--transition); }
     .support-card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
@@ -136,7 +132,11 @@
     .support-item i { color: var(--accent); flex-shrink: 0; margin-top: 0.2rem; }
     .response-badge { display: inline-block; background: rgba(74,123,157,0.1); color: var(--accent); border-radius: 50px; padding: 0.2rem 0.8rem; font-size: 0.82rem; font-weight: 600; margin-top: 1rem; }
 
-    /* ── PERPETUAL ── */
+    .sek-callout { background: rgba(74,123,157,0.06); border: 1px solid rgba(74,123,157,0.2); border-radius: 12px; padding: 1.5rem 2rem; margin-bottom: 3rem; display: flex; align-items: flex-start; gap: 1.2rem; }
+    .sek-callout i { font-size: 1.6rem; color: var(--accent); flex-shrink: 0; margin-top: 0.2rem; }
+    .sek-callout h4 { font-family: 'Montserrat', sans-serif; font-size: 1rem; color: var(--primary); margin-bottom: 0.3rem; }
+    .sek-callout p { font-size: 0.9rem; color: var(--text-light); margin: 0; }
+
     .perpetual-band { background: var(--white); border-top: 1px solid #e8eaee; border-bottom: 1px solid #e8eaee; padding: 3rem 2rem; }
     .perpetual-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; gap: 2rem; }
     .perpetual-icon { flex-shrink: 0; width: 64px; height: 64px; background: rgba(74,123,157,0.1); border-radius: 14px; display: flex; align-items: center; justify-content: center; }
@@ -147,7 +147,6 @@
     .perpetual-copy a:hover { text-decoration: underline; }
     @media (max-width: 600px) { .perpetual-inner { flex-direction: column; text-align: center; } }
 
-    /* ── ROI TABLE ── */
     .comp-table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
     .comp-table th { background: var(--primary-light); color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 600; padding: 1rem; text-align: center; }
     .comp-table th:first-child { text-align: left; }
@@ -158,14 +157,12 @@
     .comp-table .price-red { color: #c0392b; font-weight: 600; }
     .comp-table .price-green { color: var(--green); font-weight: 700; }
 
-    /* ── FAQ ── */
     .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
     .faq-item { background: var(--white); border-radius: 10px; padding: 1.5rem 1.8rem; box-shadow: var(--shadow); }
     .faq-item h4 { font-family: 'Montserrat', sans-serif; font-size: 1rem; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: flex-start; gap: 0.6rem; }
     .faq-item h4 i { color: var(--accent); flex-shrink: 0; margin-top: 0.15rem; }
     .faq-item p { color: var(--text-light); font-size: 0.92rem; line-height: 1.6; }
 
-    /* ── FINAL CTA ── */
     .final-cta { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); text-align: center; padding: 5rem 2rem; position: relative; overflow: hidden; }
     .final-cta::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.04' d='M0,224L48,213.3C96,203,192,181,288,160C384,139,480,117,576,122.7C672,128,768,160,864,170.7C960,181,1056,171,1152,165.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E"); background-size: cover; }
     .final-cta-content { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
@@ -183,27 +180,27 @@
     footer a { color: #fff; }
     footer p + p { margin-top: 0.5rem; }
 
-    @media (max-width: 768px) { .hero h1 { font-size: 2.2rem; } section { padding: 3rem 1.5rem; } h2 { font-size: 2rem; } .comp-table th, .comp-table td { padding: 0.7rem 0.6rem; font-size: 0.8rem; } }
+    @media (max-width: 768px) { .hero h1 { font-size: 2.2rem; } section { padding: 3rem 1.5rem; } h2 { font-size: 2rem; } .comp-table th, .comp-table td { padding: 0.7rem 0.6rem; font-size: 0.8rem; } .sek-callout { flex-direction: column; } }
     @media (max-width: 480px) { .hero { padding: 3rem 1.5rem 4rem; } }
   </style>
 </head>
 <body>
 
   <nav>
-  <span class="nav-brand">NorthBridge Technology</span>
-  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="index.html#services">Services</a>
-    <a href="wayfarer.html" class="active">Wayfarer Suite</a>
-    <a href="waystation.html">Waystation</a>
-    <a href="tech_stack.html">Tech Stack</a>
-    <a href="index.html#about">About</a>
-    <a href="index.html#contact">Contact</a>
-  </div>
-</nav>
+    <span class="nav-brand">NorthBridge Technology</span>
+    <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="wayfarer.html" class="active">Wayfarer Suite</a>
+      <a href="waystation.html">Waystation</a>
+      <a href="tech_stack.html">Tech Stack</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
 
   <div class="breadcrumb">
     <a href="index.html">Home</a> &gt; <a href="wayfarer.html">Wayfarer Suite</a> &gt; Pricing
@@ -211,17 +208,25 @@
 
   <section class="hero">
     <div class="hero-content">
-      <span class="savings-callout"><i class="fas fa-piggy-bank"></i>Save up to $2,847/yr with the Complete Suite</span>
+      <span class="savings-callout"><i class="fas fa-piggy-bank"></i>Save $5,000+/yr with the Complete Suite vs. standalone</span>
       <h1>One Suite. One Bill.<br>Zero Per-Seat Fees.</h1>
       <p class="tagline">Annual flat-rate licensing for every product in the Wayfarer Business Suite.</p>
       <p class="subtitle">Mix and match individual products or bundle them for maximum savings. Your data stays on your infrastructure, and your bill never grows just because your team did.</p>
     </div>
   </section>
 
-  <!-- ════ INDIVIDUAL PRODUCTS ════ -->
+  <!-- ════ SEK EXPLAINER ════ -->
   <section id="products">
+    <div class="sek-callout">
+      <i class="fas fa-key"></i>
+      <div>
+        <h4>About the Support Entitlement Key (SEK)</h4>
+        <p>A SEK is an optional annual add-on that registers your deployment in the NorthBridge licensing server. When active, your instance receives priority update notifications, gains access to priority support queues, and unlocks white-glove upgrade guidance. Available today for Wayfinder, Waypoint, and Waystation. SEK support for Waybill is on the roadmap for a future release.</p>
+      </div>
+    </div>
+
     <h2>Individual Products</h2>
-    <p class="section-subtitle">Each product is available standalone. Mix and match as needed &mdash; suite add-on rates apply when paired with a qualifying product.</p>
+    <p class="section-subtitle">Each product is available standalone. No per-seat fees, ever &mdash; your license cost is fixed regardless of team size.</p>
     <div class="prod-grid">
 
       <!-- WAYFINDER -->
@@ -231,14 +236,15 @@
           <div class="prod-tag">Strategic Portfolio Intelligence</div>
         </div>
         <div class="prod-body">
-          <div class="price-line"><span class="amt">$2,749</span><span class="per">/ year standalone</span></div>
-          <div class="price-sub"><strong>$1,649/yr</strong> as a suite add-on <small>(requires Waypoint or Waystation)</small></div>
+          <div class="price-line"><span class="amt">$5,999</span><span class="per">/ year &middot; flat license</span></div>
+          <div class="price-sub"><i class="fas fa-key" style="color:var(--accent);font-size:0.75rem;"></i>&nbsp;<strong style="color:var(--accent);">SEK available:</strong> +$1,799/yr &mdash; activates priority support &amp; licensing server entitlement</div>
           <ul class="feat-list">
             <li><i class="fas fa-check" style="color:var(--wayfinder);"></i>Strategic portfolio intake &amp; scoring</li>
             <li><i class="fas fa-check" style="color:var(--wayfinder);"></i>Executive initiative dashboard</li>
             <li><i class="fas fa-check" style="color:var(--wayfinder);"></i>Promote ceremony to Waypoint</li>
             <li><i class="fas fa-check" style="color:var(--wayfinder);"></i>Live program progress on portfolio cards</li>
             <li><i class="fas fa-check" style="color:var(--wayfinder);"></i>Microsoft Entra ID SSO &amp; SCIM</li>
+            <li><i class="fas fa-check" style="color:var(--wayfinder);"></i>Unlimited users, no seat caps</li>
           </ul>
           <a href="contact_form.html" class="prod-cta" style="background:var(--wayfinder);">Get Started</a>
         </div>
@@ -251,14 +257,15 @@
           <div class="prod-tag">Program &amp; Project Management</div>
         </div>
         <div class="prod-body">
-          <div class="price-line"><span class="amt">$3,849</span><span class="per">/ year standalone</span></div>
-          <div class="price-sub"><strong>$2,309/yr</strong> as a suite add-on <small>(when paired with Waystation)</small></div>
+          <div class="price-line"><span class="amt">$3,999</span><span class="per">/ year &middot; flat license</span></div>
+          <div class="price-sub"><i class="fas fa-key" style="color:var(--accent);font-size:0.75rem;"></i>&nbsp;<strong style="color:var(--accent);">SEK available:</strong> +$1,199/yr &mdash; activates priority support &amp; licensing server entitlement</div>
           <ul class="feat-list">
             <li><i class="fas fa-check" style="color:var(--waypoint);"></i>Program &amp; project management</li>
             <li><i class="fas fa-check" style="color:var(--waypoint);"></i>Task management with Gantt &amp; board views</li>
             <li><i class="fas fa-check" style="color:var(--waypoint);"></i>Waystation ticket deep-links (ref + uuid)</li>
             <li><i class="fas fa-check" style="color:var(--waypoint);"></i>Inherits initiative_id from Wayfinder</li>
             <li><i class="fas fa-check" style="color:var(--waypoint);"></i>Microsoft Entra ID SSO &amp; SCIM</li>
+            <li><i class="fas fa-check" style="color:var(--waypoint);"></i>Unlimited users, no seat caps</li>
           </ul>
           <a href="contact_form.html" class="prod-cta" style="background:var(--waypoint);">Get Started</a>
         </div>
@@ -272,15 +279,17 @@
         </div>
         <div class="prod-body">
           <div class="tier-rows">
-            <div class="tier-row"><span class="tr-name">Starter <small>(up to 25 agents)</small></span><span class="tr-price">$1,099</span></div>
-            <div class="tier-row"><span class="tr-name">Business <small>(up to 150)</small><span class="pop">Popular</span></span><span class="tr-price">$2,749</span></div>
-            <div class="tier-row"><span class="tr-name">Enterprise <small>(150+, from)</small></span><span class="tr-price">$6,599</span></div>
+            <div class="tier-row"><span class="tr-name">Starter <small>(up to 10 agents)</small></span><span class="tr-price">$2,999</span></div>
+            <div class="tier-row"><span class="tr-name">Professional <small>(up to 25 agents)</small><span class="pop">Popular</span></span><span class="tr-price">$6,999</span></div>
+            <div class="tier-row"><span class="tr-name">Enterprise <small>(unlimited agents)</small></span><span class="tr-price">$14,999</span></div>
+            <div class="tier-row" style="border-top:1px solid #e8eaee;padding-top:0.5rem;margin-top:0.4rem;"><span class="tr-name" style="color:var(--accent);font-size:0.85rem;"><i class="fas fa-key"></i>&nbsp;SEK (any tier)</span><span class="tr-price" style="color:var(--waystation);font-size:0.88rem;">+$2,499/yr</span></div>
           </div>
           <ul class="feat-list">
             <li><i class="fas fa-check" style="color:var(--waystation);"></i>Full ITSM helpdesk &amp; customer portal</li>
             <li><i class="fas fa-check" style="color:var(--waystation);"></i>SLA tracking &amp; approval workflows</li>
             <li><i class="fas fa-check" style="color:var(--waystation);"></i>Kanban boards &amp; automation engine</li>
-            <li><i class="fas fa-check" style="color:var(--waystation);"></i>Azure AD / SSO &amp; SCIM</li>
+            <li><i class="fas fa-check" style="color:var(--waystation);"></i>Microsoft Entra ID SSO &amp; SCIM</li>
+            <li><i class="fas fa-check" style="color:var(--waystation);"></i>Unlimited end users &amp; tickets</li>
           </ul>
           <a href="waystation_pricing.html" class="prod-cta" style="background:var(--waystation);">See Full Pricing</a>
         </div>
@@ -293,13 +302,17 @@
           <div class="prod-tag">IT Asset Management</div>
         </div>
         <div class="prod-body">
-          <div class="price-line"><span class="amt">$1,499</span><span class="per">/ year standalone</span></div>
-          <div class="price-sub"><strong>$899/yr</strong> as a suite add-on</div>
+          <div class="tier-rows">
+            <div class="tier-row"><span class="tr-name">Starter <small>(up to 500 assets)</small></span><span class="tr-price">$1,999</span></div>
+            <div class="tier-row"><span class="tr-name">Professional <small>(up to 2,500 assets)</small><span class="pop">Popular</span></span><span class="tr-price">$3,999</span></div>
+            <div class="tier-row"><span class="tr-name">Enterprise <small>(unlimited assets)</small></span><span class="tr-price">$7,999</span></div>
+          </div>
+          <div class="price-sub" style="font-style:italic;"><i class="fas fa-clock" style="color:var(--accent);font-size:0.75rem;"></i>&nbsp;SEK support key coming in a future release.</div>
           <ul class="feat-list">
             <li><i class="fas fa-check" style="color:var(--waybill);"></i>IT asset lifecycle tracking</li>
             <li><i class="fas fa-check" style="color:var(--waybill);"></i>Integration with Waystation tickets</li>
-            <li><i class="fas fa-check" style="color:var(--waybill);"></i>Depreciation tracking</li>
-            <li><i class="fas fa-check" style="color:var(--waybill);"></i>Audit-ready exports</li>
+            <li><i class="fas fa-check" style="color:var(--waybill);"></i>Depreciation tracking &amp; audit exports</li>
+            <li><i class="fas fa-check" style="color:var(--waybill);"></i>Asset linking to initiatives &amp; programs</li>
             <li><i class="fas fa-check" style="color:var(--waybill);"></i>Microsoft Entra ID SSO &amp; SCIM</li>
           </ul>
           <a href="contact_form.html" class="prod-cta" style="background:var(--waybill);">Get Started</a>
@@ -317,38 +330,38 @@
       <div class="bundle-grid">
 
         <div class="bundle-card">
-          <h3>Delivery Suite</h3>
-          <div class="bundle-parts">Waypoint + Waystation</div>
-          <div class="bundle-price">$4,799<small>/yr</small></div>
-          <div class="bundle-save">Save $898/yr vs. standalone</div>
-          <div class="bundle-best-for">Best for IT teams running project-linked helpdesk operations.</div>
+          <h3>Portfolio Suite</h3>
+          <div class="bundle-parts">Wayfinder + Waypoint</div>
+          <div class="bundle-price">$7,999<small>/yr</small></div>
+          <div class="bundle-save">Save $2,000/yr vs. standalone</div>
+          <div class="bundle-best-for">Best for executives managing strategic initiative portfolios. Captures ideas, scores them, and plans execution &mdash; no ITSM required.</div>
           <a href="contact_form.html" class="bundle-cta">Request a Quote</a>
         </div>
 
         <div class="bundle-card">
-          <h3>Portfolio Suite</h3>
-          <div class="bundle-parts">Wayfinder + Waypoint</div>
-          <div class="bundle-price">$4,999<small>/yr</small></div>
-          <div class="bundle-save">Save $1,599/yr vs. standalone</div>
-          <div class="bundle-best-for">Best for executives managing strategic initiative portfolios.</div>
+          <h3>Delivery Suite</h3>
+          <div class="bundle-parts">Waypoint + Waystation Professional</div>
+          <div class="bundle-price">$8,999<small>/yr</small></div>
+          <div class="bundle-save">Save $1,999/yr vs. standalone</div>
+          <div class="bundle-best-for">Best for IT teams running project-linked helpdesk operations. Plan the work and execute it in one connected platform.</div>
           <a href="contact_form.html" class="bundle-cta">Request a Quote</a>
         </div>
 
         <div class="bundle-card">
           <h3>Executive Initiative Suite</h3>
-          <div class="bundle-parts">Wayfinder + Waypoint + Waystation</div>
-          <div class="bundle-price">$6,999<small>/yr</small></div>
-          <div class="bundle-save">Save $2,349/yr vs. standalone</div>
-          <div class="bundle-best-for">Best for organizations running the full initiative-to-implementation lifecycle.</div>
+          <div class="bundle-parts">Wayfinder + Waypoint + Waystation Pro</div>
+          <div class="bundle-price">$13,999<small>/yr</small></div>
+          <div class="bundle-save">Save $3,000/yr vs. standalone</div>
+          <div class="bundle-best-for">Best for organizations running the full initiative-to-implementation lifecycle without asset management.</div>
           <a href="contact_form.html" class="bundle-cta">Request a Quote</a>
         </div>
 
         <div class="bundle-card best">
           <span class="best-badge">Best Value</span>
           <h3>Complete Wayfarer Suite</h3>
-          <div class="bundle-parts">All four products</div>
-          <div class="bundle-price">$7,999<small>/yr</small></div>
-          <div class="bundle-save">Save $2,847/yr vs. standalone</div>
+          <div class="bundle-parts">All four products (Professional tiers)</div>
+          <div class="bundle-price">$15,999<small>/yr</small></div>
+          <div class="bundle-save">Save $5,000/yr vs. standalone</div>
           <div class="bundle-best-for">Everything &mdash; portfolio, programs, helpdesk, and asset management &mdash; on one annual invoice from one vendor.</div>
           <a href="contact_form.html" class="bundle-cta">Request a Quote</a>
         </div>
@@ -360,13 +373,13 @@
   <!-- ════ SUPPORT TIERS ════ -->
   <section id="support">
     <h2>Optional Support Add-Ons</h2>
-    <p class="section-subtitle">All products include email support and documentation. Paid support adds priority access, a dedicated Slack channel, and hands-on assistance.</p>
+    <p class="section-subtitle">All products include email support and documentation. Paid support adds priority access, a dedicated Slack channel, and hands-on assistance. These tiers are separate from the per-product SEK.</p>
     <div class="support-grid">
 
       <div class="support-card">
         <div class="support-card-header">
           <h3>Starter Support</h3>
-          <div class="tier-price">$219/mo &nbsp;·&nbsp; $1,990/yr</div>
+          <div class="tier-price">$299/mo &nbsp;&middot;&nbsp; $2,990/yr</div>
         </div>
         <div class="support-card-body">
           <div class="support-item"><i class="fas fa-envelope"></i>Email-based ticket support</div>
@@ -380,28 +393,28 @@
       <div class="support-card">
         <div class="support-card-header">
           <h3>Business Support</h3>
-          <div class="tier-price">$549/mo &nbsp;·&nbsp; $4,990/yr</div>
+          <div class="tier-price">$699/mo &nbsp;&middot;&nbsp; $6,990/yr</div>
         </div>
         <div class="support-card-body">
           <div class="support-item"><i class="fas fa-envelope"></i>Priority email support</div>
           <div class="support-item"><i class="fab fa-slack"></i>Dedicated Slack channel</div>
           <div class="support-item"><i class="fas fa-calendar-check"></i>Quarterly check-in call</div>
           <div class="support-item"><i class="fas fa-shield-alt"></i>SSO &amp; SCIM setup assistance</div>
-          <div class="response-badge"><i class="fas fa-clock"></i> 24-hour response</div>
+          <div class="response-badge"><i class="fas fa-clock"></i> 8-hour response</div>
         </div>
       </div>
 
       <div class="support-card">
         <div class="support-card-header">
           <h3>Enterprise Support</h3>
-          <div class="tier-price">$1,099/mo &nbsp;·&nbsp; $10,590/yr</div>
+          <div class="tier-price">$1,499/mo &nbsp;&middot;&nbsp; $14,990/yr</div>
         </div>
         <div class="support-card-body">
           <div class="support-item"><i class="fas fa-user-tie"></i>Named NorthBridge point of contact</div>
           <div class="support-item"><i class="fas fa-headset"></i>Phone, email &amp; Slack support</div>
           <div class="support-item"><i class="fas fa-tasks"></i>Feature request prioritization</div>
           <div class="support-item"><i class="fas fa-rocket"></i>White-glove deployment assistance</div>
-          <div class="response-badge"><i class="fas fa-clock"></i> 4-hour response SLA</div>
+          <div class="response-badge"><i class="fas fa-clock"></i> 1-hour response SLA</div>
         </div>
       </div>
 
@@ -423,7 +436,7 @@
   <div class="dark-section">
     <div class="dark-inner">
       <h2 style="color:#fff;">The Math Speaks for Itself</h2>
-      <p class="section-subtitle">Estimated annual cost for a 50-user team with 25 support agents. SaaS stacks bill per seat, every month. The Wayfarer Suite doesn't.</p>
+      <p class="section-subtitle">Estimated annual cost for a 50-user team with 10 IT agents. SaaS stacks bill per seat, every month. The Wayfarer Suite doesn't.</p>
       <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px;">
       <table class="comp-table" style="min-width:520px;">
         <thead>
@@ -433,7 +446,7 @@
           <tr><td>ServiceNow ITSM (basic)</td><td>SaaS, per-fulfiller</td><td class="price-red">~$45,000</td></tr>
           <tr><td>Monday.com Pro + Freshservice Growth</td><td>SaaS, per-seat</td><td class="price-red">~$26,100</td></tr>
           <tr><td>Atlassian Stack (Jira + JSM + Confluence)</td><td>SaaS, per-seat</td><td class="price-red">~$14,200</td></tr>
-          <tr class="highlight"><td><strong>Complete Wayfarer Suite</strong></td><td>Self-hosted, flat</td><td class="price-green">$7,999</td></tr>
+          <tr class="highlight"><td><strong>Complete Wayfarer Suite</strong></td><td>Self-hosted, flat</td><td class="price-green">$15,999</td></tr>
         </tbody>
       </table>
       </div>
@@ -446,12 +459,12 @@
     <h2>Common Questions</h2>
     <p class="section-subtitle">Everything you need to know before getting started.</p>
     <div class="faq-grid">
-      <div class="faq-item"><h4><i class="fas fa-question-circle"></i>Is support required?</h4><p>No. Support is completely optional on every product and bundle. Add it any time if your needs change.</p></div>
-      <div class="faq-item"><h4><i class="fas fa-question-circle"></i>Can I mix standalone and suite products?</h4><p>Yes. Start with one product and add others later &mdash; suite add-on rates apply once you qualify. Contact us and we'll structure it.</p></div>
-      <div class="faq-item"><h4><i class="fas fa-question-circle"></i>Are there really no per-seat fees?</h4><p>Correct. Your license price is fixed within its tier no matter how many people use it.</p></div>
-      <div class="faq-item"><h4><i class="fas fa-question-circle"></i>What if my team grows past the Waystation tier?</h4><p>You simply move to the next agent tier. Every other product is headcount-independent.</p></div>
-      <div class="faq-item"><h4><i class="fas fa-question-circle"></i>Do suite bundles include support?</h4><p>No &mdash; support is always a separate optional add-on, so you only pay for what you need.</p></div>
-      <div class="faq-item"><h4><i class="fas fa-question-circle"></i>Can we try before we buy?</h4><p>Absolutely. <a href="contact_form.html" style="color:var(--accent);font-weight:600;">Request a demo</a> and we'll walk you through a live environment.</p></div>
+      <div class="faq-item"><h4><i class="fas fa-question-circle"></i>What is the Support Entitlement Key (SEK)?</h4><p>The SEK is an optional annual add-on that registers your deployment in the NorthBridge licensing server. It activates priority support queue access, automatic update notifications, and white-glove upgrade guidance. Available for Wayfinder, Waypoint, and Waystation today. Waybill SEK is coming in a future release.</p></div>
+      <div class="faq-item"><h4><i class="fas fa-question-circle"></i>Is support required?</h4><p>No. The SEK and support tiers are completely optional on every product and bundle. Add them any time if your needs change.</p></div>
+      <div class="faq-item"><h4><i class="fas fa-question-circle"></i>Why is there no per-seat pricing?</h4><p>We designed Wayfarer for growing teams. Per-seat pricing punishes you for hiring. With flat annual licensing, your cost is predictable and your team can grow freely within the platform.</p></div>
+      <div class="faq-item"><h4><i class="fas fa-question-circle"></i>What if my team grows past the Waystation tier?</h4><p>You simply upgrade to the next tier. Wayfinder, Waypoint, and Waybill are completely headcount-independent.</p></div>
+      <div class="faq-item"><h4><i class="fas fa-question-circle"></i>Do suite bundles include the SEK?</h4><p>No &mdash; the SEK is always a separate optional add-on per product. This keeps the base bundle price low and lets you add entitlement keys only where you need them.</p></div>
+      <div class="faq-item"><h4><i class="fas fa-question-circle"></i>Can we try before we buy?</h4><p>Absolutely. <a href="contact_form.html" style="color:var(--accent);font-weight:600;">Request a demo</a> and we&rsquo;ll walk you through a live environment.</p></div>
     </div>
   </section>
 
@@ -468,7 +481,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 NorthBridge Technology. All rights reserved.</p>
+    <p>&copy; 2026 NorthBridge Technology. All rights reserved.</p>
     <p><a href="privacy_policy.html">Privacy Policy</a> | <a href="terms_and_conditions.html">Terms and Conditions</a> | <a href="sitemap.html">Sitemap</a></p>
   </footer>
 
